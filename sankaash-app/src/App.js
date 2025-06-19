@@ -116,7 +116,7 @@ function App() {
             <a href="#services" className="cta-button">Discover Your Transformation</a>
           </div>
           <div className="hero-image">
-            <img src="/image1.jfif" alt="Sankaash Bharadwaj" />
+            <img src={process.env.PUBLIC_URL + '/image1.jfif'} alt="Sankaash Bharadwaj" />
           </div>
         </div>
       </section>      {/* About Section */}
@@ -177,7 +177,7 @@ function App() {
               <div className="about-visual-section">
                 <div className="about-image-container">
                   <div className="about-image-wrapper">
-                    <img src="/image2.jfif" alt="Sankaash Bharadwaj - Energy Healer and Life Coach" />
+                    <img src={process.env.PUBLIC_URL + '/image2.jfif'} alt="Sankaash Bharadwaj - Energy Healer and Life Coach" />
                     <div className="image-overlay">
                       <div className="overlay-content">
                         <span className="overlay-text">Transforming Lives Since 2011</span>
@@ -245,7 +245,7 @@ function App() {
               <p>In today's demanding work environment, stress and burnout are all too common. I believe that when employees feel balanced and supported, they bring their best to both work and life. That's why I offer wellness programs designed to help teams reduce stress, build better habits, and create a more positive and productive workplace.</p>
             </div>
             <div className="corporate-image">
-              <img src="/image3.jfif" alt="Corporate Wellness" />
+              <img src={process.env.PUBLIC_URL + '/image3.jfif'} alt="Corporate Wellness" />
             </div>
           </div>
           
