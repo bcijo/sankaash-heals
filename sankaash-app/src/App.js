@@ -240,7 +240,7 @@ function App() {
         <div className="container">
           <h2>Ready to Transform Your Life?</h2>
           <p>Take the first step towards a life of balance, abundance, and fulfillment. Let's work together to unlock your true potential and create lasting positive change.</p>
-          <a href="mailto:sankaash@example.com" className="contact-button">Get In Touch</a>
+          <a href="mailto:connect@sankaashbharadwaj.in" className="contact-button">Get In Touch</a>
         </div>
       </section>
     </>
