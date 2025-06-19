@@ -119,27 +119,90 @@ function App() {
             <img src="/image1.jfif" alt="Sankaash Bharadwaj" />
           </div>
         </div>
-      </section>
-
-      {/* About Section */}
-      <section id="about" className="services">
+      </section>      {/* About Section */}
+      <section id="about" className="about-section">
         <div className="container">
-          <h2 className="section-title">About Sankaash</h2>
-          <p className="section-subtitle">
-            Beginning his journey into energy healing at age 13, Sankaash has dedicated his life to empowering others through a unique integration of ancient teachings and modern science.
-          </p>
-          
-          <div className="about-content">
-            <div>
-              <p className="about-text">
-                What makes Sankaash unique is his ability to seamlessly bridge ancient teachings—such as the Vedas, Vedanta, and Tantra—with modern advancements in quantum physics, neuroscience, and habit science. By integrating timeless spiritual philosophies with cutting-edge technologies, he provides a comprehensive, holistic approach to transformation and growth.
-              </p>
-              <p className="about-text">
-                Through his workshops, one-on-one coaching, and energy healing sessions, Sankaash has transformed many lives by inspiring self-awareness, promoting well-being, and guiding clients toward a life of abundance and fulfillment.
+          <div className="about-header">
+            <div className="about-header-content">
+              <span className="about-label">About Sankaash</span>
+              <h2 className="about-title">Bridging Ancient Wisdom with Modern Science</h2>
+              <p className="about-intro">
+                Beginning his journey into energy healing at age 13, Sankaash has dedicated his life to empowering others through a unique integration of ancient teachings and modern science.
               </p>
             </div>
-            <div>
-              <img src="/image2.jfif" alt="About Sankaash" />
+          </div>
+          
+          <div className="about-content-wrapper">
+            <div className="about-content-grid">
+              <div className="about-text-section">
+                <div className="about-text-content">
+                  <div className="about-highlight">
+                    <h3>What Makes Sankaash Unique</h3>
+                    <p className="about-description">
+                      His ability to seamlessly bridge ancient teachings—such as the Vedas, Vedanta, and Tantra—with modern advancements in quantum physics, neuroscience, and habit science.
+                    </p>
+                  </div>
+                  
+                  <div className="about-approach">
+                    <h4>Holistic Transformation Approach</h4>
+                    <p className="about-text">
+                      By integrating timeless spiritual philosophies with cutting-edge technologies, Sankaash provides a comprehensive, holistic approach to transformation and growth that addresses both the mind and spirit.
+                    </p>
+                  </div>
+                  
+                  <div className="about-impact">
+                    <h4>Proven Impact</h4>
+                    <p className="about-text">
+                      Through workshops, one-on-one coaching, and energy healing sessions, Sankaash has transformed countless lives by inspiring self-awareness, promoting well-being, and guiding clients toward abundance and fulfillment.
+                    </p>
+                  </div>
+                  
+                  <div className="about-stats">
+                    <div className="stat-item">
+                      <span className="stat-number">13+</span>
+                      <span className="stat-label">Years of Experience</span>
+                    </div>
+                    <div className="stat-item">
+                      <span className="stat-number">500+</span>
+                      <span className="stat-label">Lives Transformed</span>
+                    </div>
+                    <div className="stat-item">
+                      <span className="stat-number">100%</span>
+                      <span className="stat-label">Holistic Approach</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="about-visual-section">
+                <div className="about-image-container">
+                  <div className="about-image-wrapper">
+                    <img src="/image2.jfif" alt="Sankaash Bharadwaj - Energy Healer and Life Coach" />
+                    <div className="image-overlay">
+                      <div className="overlay-content">
+                        <span className="overlay-text">Transforming Lives Since 2011</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="about-credentials">
+                  <div className="credential-item">
+                    <div className="credential-icon">🧘</div>
+                    <div className="credential-text">
+                      <h5>Energy Healing Master</h5>
+                      <p>Certified in multiple healing modalities</p>
+                    </div>
+                  </div>
+                  <div className="credential-item">
+                    <div className="credential-icon">🎓</div>
+                    <div className="credential-text">
+                      <h5>Scientific Integration</h5>
+                      <p>Quantum physics & neuroscience expertise</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
