@@ -111,7 +111,7 @@ function App() {
             <h1>Sankaash S Bharadwaj</h1>
             <div className="hero-subtitle">Energy Healer • Law of Attraction Teacher • Life Coach • Habit Coach</div>
             <div className="hero-description">
-              Bridging ancient wisdom with modern science to unlock your true potential and create lasting transformation. Experience the perfect blend of Vedic teachings, quantum physics, and neuroscience for holistic growth.
+            Unlock your true potential and transform your life with a perfect blend of ancient wisdom and modern science. Drawing from timeless Vedic teachings, Energy Healing, the Law of Attraction, and the power of Habit Science, I invite you to embark on a journey of self-discovery and lasting change. Together, we’ll explore practical and profound ways to align your inner and outer worlds, creating a life that truly resonates with your highest self.
             </div>
             <a href="#services" className="cta-button">Discover Your Transformation</a>
           </div>
@@ -127,7 +127,7 @@ function App() {
               <span className="about-label">About Sankaash</span>
               <h2 className="about-title">Bridging Ancient Wisdom with Modern Science</h2>
               <p className="about-intro">
-                Beginning his journey into energy healing at age 13, Sankaash has dedicated his life to empowering others through a unique integration of ancient teachings and modern science.
+              Starting his journey in Energy Healing at 13, Sankaash blends ancient wisdom with modern tools to help others unlock their true potential and live their best lives.
               </p>
             </div>
           </div>
@@ -139,14 +139,7 @@ function App() {
                   <div className="about-highlight">
                     <h3>What Makes Sankaash Unique</h3>
                     <p className="about-description">
-                      His ability to seamlessly bridge ancient teachings—such as the Vedas, Vedanta, and Tantra—with modern advancements in quantum physics, neuroscience, and habit science.
-                    </p>
-                  </div>
-                  
-                  <div className="about-approach">
-                    <h4>Holistic Transformation Approach</h4>
-                    <p className="about-text">
-                      By integrating timeless spiritual philosophies with cutting-edge technologies, Sankaash provides a comprehensive, holistic approach to transformation and growth that addresses both the mind and spirit.
+                      Sankaash effortlessly blends ancient wisdom from the Vedas and Tantra with modern advancements in Neuroscience, Energy Healing, the Law of Attraction, and Habit Science. His holistic approach integrates timeless spiritual philosophies with contemporary practices, creating a path of transformation that nurtures the mind, body, and spirit.
                     </p>
                   </div>
                   
@@ -163,12 +156,12 @@ function App() {
                       <span className="stat-label">Years of Experience</span>
                     </div>
                     <div className="stat-item">
-                      <span className="stat-number">500+</span>
+                      <span className="stat-number">2000+</span>
                       <span className="stat-label">Lives Transformed</span>
                     </div>
                     <div className="stat-item">
-                      <span className="stat-number">100%</span>
-                      <span className="stat-label">Holistic Approach</span>
+                      <span className="stat-number">100+</span>
+                      <span className="stat-label">Seminars & Workshops</span>
                     </div>
                   </div>
                 </div>
@@ -190,15 +183,22 @@ function App() {
                   <div className="credential-item">
                     <div className="credential-icon">🧘</div>
                     <div className="credential-text">
-                      <h5>Energy Healing Master</h5>
-                      <p>Certified in multiple healing modalities</p>
+                      <h5>Master Healer and Life Coach</h5>
+                      <p>Certified in diverse healing and coaching modalities</p>
                     </div>
                   </div>
                   <div className="credential-item">
                     <div className="credential-icon">🎓</div>
                     <div className="credential-text">
                       <h5>Scientific Integration</h5>
-                      <p>Quantum physics & neuroscience expertise</p>
+                      <p>A scientific integration of Habit Science, Energy Healing, the Law of Attraction, and Neuroscience.</p>
+                    </div>
+                  </div>
+                  <div className="credential-item">
+                    <div className="credential-icon">🧠</div>
+                    <div className="credential-text">
+                      <h5>Psychologist in the Making</h5>
+                      <p>Blending academic knowledge with real-world experience to empower personal transformation.</p>
                     </div>
                   </div>
                 </div>
@@ -217,8 +217,8 @@ function App() {
           <div className="services-grid">
             <div className="service-card">
               <div className="service-icon">⚡</div>
-              <h3>Energy Healing</h3>
-              <p>At the core of what I do is energy healing—a powerful practice that addresses the root cause of any physical, mental, or emotional issue. Whether you're dealing with chronic pain, stress, anxiety, or emotional blocks, I use intuitive and proven techniques to restore balance, realign your energy, and activate your body's natural ability to heal itself.</p>
+              <h3>Energy Healing with Crystals</h3>
+              <p>At the core of what I do is energy healing with crystals, a powerful practice that addresses the root cause of any physical, mental, or emotional issue. Whether you're dealing with chronic pain, stress, anxiety, or emotional blocks, I use intuitive and proven techniques to restore balance, realign your energy, and activate your body's natural ability to heal itself.</p>
             </div>
             
             <div className="service-card">
