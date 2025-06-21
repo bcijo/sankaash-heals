@@ -139,14 +139,14 @@ function App() {
                   <div className="about-highlight">
                     <h3>What Makes Sankaash Unique</h3>
                     <p className="about-description">
-                      Sankaash effortlessly blends ancient wisdom from the Vedas and Tantra with modern advancements in Neuroscience, Energy Healing, the Law of Attraction, and Habit Science. His holistic approach integrates timeless spiritual philosophies with contemporary practices, creating a path of transformation that nurtures the mind, body, and spirit.
+                      Sankaash effortlessly blends ancient wisdom from the <strong>Vedas</strong> and <strong>Tantra</strong> with modern advancements in <strong>Neuroscience, Energy Healing</strong>, the <strong>Law of Attraction</strong>, and <strong>Habit Science</strong>. His holistic approach integrates timeless spiritual philosophies with contemporary practices, creating a path of transformation that nurtures the <strong>mind, body</strong>, and <strong>spirit</strong>.
                     </p>
                   </div>
                   
                   <div className="about-impact">
                     <h4>Proven Impact</h4>
                     <p className="about-text">
-                      Through workshops, one-on-one coaching, and energy healing sessions, Sankaash has transformed countless lives by inspiring self-awareness, promoting well-being, and guiding clients toward abundance and fulfillment.
+                      Through <strong>workshops, one-on-one coaching</strong>, and <strong>energy healing sessions</strong>, Sankaash has transformed many lives by inspiring <strong>self-awareness</strong>, promoting <strong>well-being</strong>, and guiding clients toward <strong>abundance</strong> and <strong>fulfillment</strong>.
                     </p>
                   </div>
                   
