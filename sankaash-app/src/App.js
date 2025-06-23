@@ -125,6 +125,9 @@ function App() {
     return "🧑"; // faceless man
   }
 
+  // Track which review card is expanded (by index)
+  const [expandedReview, setExpandedReview] = useState(null);
+
   // The actual JSX that will be rendered
   return (
     <>
@@ -427,38 +430,52 @@ function App() {
               {[1, 2].map(loop =>
                 [ // 4 placeholder reviews
                   {
-                    review: "Working with Sankaash has been a life-changing experience. I feel more balanced and confident than ever before.",
-                    name: "Priya Sharma",
+                    review: "Sankaash brother is authentic in his approach and shares teachings from his experiences directly which makes him very approachable.",
+                    name: "R. Varuneshwaran",
                     img: process.env.PUBLIC_URL + '/review1.jpg'
                   },
                   {
-                    review: "The energy healing sessions brought me clarity and peace. Highly recommended for anyone seeking real transformation.",
-                    name: "Rahul Mehta",
+                    review: "✨ Grateful for the Law of Attraction Training! This powerful programme helped me shift my mindset 🌈, stay focused 🎯, and attract positivity 🌟. It made a real impact on both my personal life 💫 and professional journey 🚀. Thank you Sankaash ji for this magical transformation! 🙏💖",
+                    name: "Bobbili Mamatha",
                     img: process.env.PUBLIC_URL + '/review2.jpg'
                   },
                   {
-                    review: "Sankaash’s workshops are both practical and inspiring. I’ve built habits that truly last.",
-                    name: "Ananya Rao",
+                    review: "Attending Sankaash's sessions has truly been a turning point in my life. I’ve started feeling genuinely happy about the little things I have, something I used to overlook. His guidance helped me build a simple yet meaningful routine, and writing about my daily experiences has become a powerful habit that brings clarity and peace. What I appreciate the most is that he’s just a call away whenever I need guidance on my spiritual journey. Thank you so much, Sankaash, for being such a grounding presence!",
+                    name: "Chandana Prasad",
                     img: "" // No image, will show placeholder
                   },
                   {
-                    review: "I never thought coaching could be so impactful. Thank you for helping me rediscover my purpose.",
-                    name: "Vikram Singh",
+                    review: "Hi, I attended one session only but before that i met him , I talked personally. I asked some questions and also asked to decode my dream. He replied with a sentence for that .His words i have taken very seriously and started analyzing what I am looking for. Finally I found it. The conversation with him made me think and analyze. This helped me a lot in my spiritual path. I am happy for that. Thank you 😊",
+                    name: "Uma Bhargavi",
                     img: "" // No image, will show placeholder
                   }
-                ].map((r, idx) => (
-                  <div className="review-card" key={loop + '-' + idx}>
-                    <div className="review-image">
-                      {r.img ?
-                        <img src={r.img} alt={r.name + " portrait"} onError={e => { e.target.onerror = null; e.target.style.display = 'none'; e.target.parentNode.innerHTML = getPlaceholderEmoji(r.name); }} />
-                        :
-                        <span className="review-placeholder-emoji" aria-label="portrait placeholder">{getPlaceholderEmoji(r.name)}</span>
-                      }
+                ].map((r, idx) => {
+                  const cardIndex = loop * 10 + idx; // unique index for each card
+                  return (
+                    <div
+                      className={`review-card${expandedReview === cardIndex ? " expanded" : ""}`}
+                      key={loop + '-' + idx}
+                      onClick={() => setExpandedReview(expandedReview === cardIndex ? null : cardIndex)}
+                      tabIndex={0}
+                      onKeyDown={e => {
+                        if (e.key === 'Enter' || e.key === ' ') {
+                          setExpandedReview(expandedReview === cardIndex ? null : cardIndex);
+                        }
+                      }}
+                      aria-expanded={expandedReview === cardIndex}
+                    >
+                      <div className="review-image">
+                        {r.img ?
+                          <img src={r.img} alt={r.name + " portrait"} onError={e => { e.target.onerror = null; e.target.style.display = 'none'; e.target.parentNode.innerHTML = getPlaceholderEmoji(r.name); }} />
+                          :
+                          <span className="review-placeholder-emoji" aria-label="portrait placeholder">{getPlaceholderEmoji(r.name)}</span>
+                        }
+                      </div>
+                      <div className="review-text">"{r.review}"</div>
+                      <div className="review-name">— {r.name}</div>
                     </div>
-                    <div className="review-text">"{r.review}"</div>
-                    <div className="review-name">— {r.name}</div>
-                  </div>
-                ))
+                  );
+                })
               )}
             </div>
           </div>

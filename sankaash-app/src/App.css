@@ -470,14 +470,15 @@ body {
 }
 
 .reviews-carousel {
-  width: 100%;
   height: 400px;
-  padding-top: 10px;
-  padding-bottom: 20px;
+  align-items: start;
+  padding-top: 15px;
+  padding-bottom: 15px;
   overflow: hidden;
   outline: none;
   cursor: grab;
   user-select: none;
+  position: relative;
 }
 
 .reviews-track {
@@ -503,13 +504,16 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition: transform 0.3s, box-shadow 0.3s, width 0.3s, max-width 0.3s;
   position: relative;
 }
 
 .review-card:hover {
-  transform: scale(1.04) translateY(-6px);
-  box-shadow: 0 16px 40px rgba(102, 126, 234, 0.18);
+  transform: scale(1.1) translateY(-10px);
+  box-shadow: 0 20px 50px rgba(102, 126, 234, 0.25);
+  z-index: 10;
+  width: 110%;
+  max-width: 400px;
 }
 
 .review-image {
@@ -550,6 +554,24 @@ body {
   margin-bottom: 1.2rem;
   font-style: italic;
   min-height: 70px;
+  max-height: 120px;
+  overflow: hidden;
+  padding-right: 4px;
+  display: -webkit-box;
+  -webkit-line-clamp: 6;
+  -webkit-box-orient: vertical;
+  white-space: normal;
+  text-overflow: ellipsis;
+  transition: max-height 0.3s, -webkit-line-clamp 0.3s;
+  cursor: pointer;
+}
+
+/* Only expand review text on hover, not on .expanded class */
+.review-card:hover .review-text {
+  max-height: 1000px;
+  -webkit-line-clamp: unset;
+  overflow: visible;
+  white-space: normal;
 }
 
 .review-name {
@@ -566,6 +588,12 @@ body {
   padding-top: 0.3rem;
   transition: background 0.3s;
   border-radius: 8px;
+}
+
+/* Blurred background effect for non-hovered cards */
+.reviews-track:hover .review-card:not(:hover) {
+  filter: blur(3px);
+  opacity: 0.7;
 }
 
 /* Animation for reviews carousel */
@@ -1170,7 +1198,8 @@ html {
 /* About Section - Corporate Style */
 .about-section {
     padding: 8rem 0;
-    background: linear-gradient(135deg, #f8fafc 0%, #ffffff 50%, #f1f5f9 100%);
+    /* Updated background for more distinction */
+    background: linear-gradient(135deg, #e0f7fa 0%, #f1f5f9 100%);
     position: relative;
     overflow: hidden;
 }
