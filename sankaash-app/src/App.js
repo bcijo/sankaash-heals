@@ -139,6 +139,7 @@ function App() {
             <li><a href="#about">About</a></li>
             <li><a href="#services">Services</a></li>
             <li><a href="#corporate">Corporate</a></li>
+            <li><a href="#educational">Educational</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
         </nav>
@@ -415,8 +416,8 @@ function App() {
         </div>
       </section>
 
-            {/* Client Reviews Section */}
-      <section className="reviews-section">
+      {/* Client Reviews Section */}
+      <section id="reviews" className="reviews-section">
         <div className="container">
           <h2 className="reviews-title">✨ Voices of Transformation ✨</h2>
           <div
@@ -472,7 +473,7 @@ function App() {
                         }
                       </div>
                       <div className="review-text">"{r.review}"</div>
-                      <div className="review-name">— {r.name}</div>
+                      <div className="review-name">{r.name}</div>
                     </div>
                   );
                 })
