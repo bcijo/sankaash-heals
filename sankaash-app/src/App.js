@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import './App.css';
 
 function App() {
@@ -83,6 +83,47 @@ function App() {
       window.removeEventListener('scroll', throttle(handleHeaderScroll, 16));
     };
   }, []); // Empty dependency array means this runs once on mount
+
+  // Reviews carousel pause/play logic
+  const reviewsRef = useRef(null);
+  const [isPaused, setIsPaused] = useState(false);
+
+  useEffect(() => {
+    const reviewsEl = reviewsRef.current;
+    if (!reviewsEl) return;
+
+    let animationPlayState = 'running';
+
+    function pauseCarousel() {
+      animationPlayState = 'paused';
+      reviewsEl.style.animationPlayState = 'paused';
+    }
+    function playCarousel() {
+      animationPlayState = 'running';
+      reviewsEl.style.animationPlayState = 'running';
+    }
+
+    reviewsEl.addEventListener('mouseenter', pauseCarousel);
+    reviewsEl.addEventListener('mouseleave', playCarousel);
+    reviewsEl.addEventListener('mousedown', pauseCarousel);
+    reviewsEl.addEventListener('mouseup', playCarousel);
+
+    return () => {
+      reviewsEl.removeEventListener('mouseenter', pauseCarousel);
+      reviewsEl.removeEventListener('mouseleave', playCarousel);
+      reviewsEl.removeEventListener('mousedown', pauseCarousel);
+      reviewsEl.removeEventListener('mouseup', playCarousel);
+    };
+  }, []);
+
+  // Helper to get placeholder emoji based on name (simple gender guess)
+  function getPlaceholderEmoji(name) {
+    // Very basic: if name ends with 'a' or 'i', assume woman, else man
+    if (/a$|i$/i.test(name.split(' ')[0])) {
+      return "🧑‍🦰"; // faceless woman
+    }
+    return "🧑"; // faceless man
+  }
 
   // The actual JSX that will be rendered
   return (
@@ -366,6 +407,59 @@ function App() {
                 <li>Healthy coping mechanisms</li>
                 <li>Saying NO with confidence</li>
               </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+            {/* Client Reviews Section */}
+      <section className="reviews-section">
+        <div className="container">
+          <h2 className="reviews-title">✨ Voices of Transformation ✨</h2>
+          <div
+            className="reviews-carousel"
+            ref={reviewsRef}
+            tabIndex={0}
+            aria-label="Client Reviews Carousel"
+          >
+            <div className="reviews-track">
+              {/* Repeat reviews twice for seamless looping */}
+              {[1, 2].map(loop =>
+                [ // 4 placeholder reviews
+                  {
+                    review: "Working with Sankaash has been a life-changing experience. I feel more balanced and confident than ever before.",
+                    name: "Priya Sharma",
+                    img: process.env.PUBLIC_URL + '/review1.jpg'
+                  },
+                  {
+                    review: "The energy healing sessions brought me clarity and peace. Highly recommended for anyone seeking real transformation.",
+                    name: "Rahul Mehta",
+                    img: process.env.PUBLIC_URL + '/review2.jpg'
+                  },
+                  {
+                    review: "Sankaash’s workshops are both practical and inspiring. I’ve built habits that truly last.",
+                    name: "Ananya Rao",
+                    img: "" // No image, will show placeholder
+                  },
+                  {
+                    review: "I never thought coaching could be so impactful. Thank you for helping me rediscover my purpose.",
+                    name: "Vikram Singh",
+                    img: "" // No image, will show placeholder
+                  }
+                ].map((r, idx) => (
+                  <div className="review-card" key={loop + '-' + idx}>
+                    <div className="review-image">
+                      {r.img ?
+                        <img src={r.img} alt={r.name + " portrait"} onError={e => { e.target.onerror = null; e.target.style.display = 'none'; e.target.parentNode.innerHTML = getPlaceholderEmoji(r.name); }} />
+                        :
+                        <span className="review-placeholder-emoji" aria-label="portrait placeholder">{getPlaceholderEmoji(r.name)}</span>
+                      }
+                    </div>
+                    <div className="review-text">"{r.review}"</div>
+                    <div className="review-name">— {r.name}</div>
+                  </div>
+                ))
+              )}
             </div>
           </div>
         </div>
