@@ -135,10 +135,14 @@ function App() {
   const PHONE = '+919113529050'; // Replace with your business phone number
 
   function handlePhoneClick(e) {
-    e.preventDefault();
-    navigator.clipboard.writeText(PHONE);
-    window.location.href = `tel:${PHONE}`;
-    alert('Phone number copied to clipboard!');
+    if (window.innerWidth > 1024) {
+      e.preventDefault();
+      navigator.clipboard.writeText(PHONE);
+      alert('Phone number copied to clipboard!');
+    } else {
+      // On mobile/tablet, let the default tel: link open the dialer
+      // No preventDefault
+    }
   }
 
   // The actual JSX that will be rendered
