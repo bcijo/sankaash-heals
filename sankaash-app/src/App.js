@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import './App.css';
+import { FaWhatsapp, FaEnvelope, FaPhone } from 'react-icons/fa';
 
 function App() {
   // Smooth scrolling for navigation links
@@ -128,13 +129,25 @@ function App() {
   // Track which review card is expanded (by index)
   const [expandedReview, setExpandedReview] = useState(null);
 
+  // Contact details
+  const WHATSAPP_LINK = 'https://wa.me/message/DGDETAOHXV72N1'; // Replace with your WhatsApp business link
+  const EMAIL = 'connect@sankaashbharadwaj.in'; // Your business email
+  const PHONE = '+919113529050'; // Replace with your business phone number
+
+  function handlePhoneClick(e) {
+    e.preventDefault();
+    navigator.clipboard.writeText(PHONE);
+    window.location.href = `tel:${PHONE}`;
+    alert('Phone number copied to clipboard!');
+  }
+
   // The actual JSX that will be rendered
   return (
     <>
       {/* Header */}
       <header className="header">
         <nav className="nav">
-          <div className="logo">Sankaash S Bharadwaj</div>
+          <div className="logo">Sankaash Bharadwaj</div>
           <ul className="nav-links">
             <li><a href="#about">About</a></li>
             <li><a href="#services">Services</a></li>
@@ -153,7 +166,7 @@ function App() {
         
         <div className="hero-content">
           <div className="hero-text">
-            <h1>Sankaash S Bharadwaj</h1>
+            <h1>Sankaash Bharadwaj</h1>
             <div className="hero-subtitle">Energy Healer • Law of Attraction Teacher • Life Coach • Habit Coach</div>
             <div className="hero-description">
             Unlock your true potential and transform your life with a perfect blend of ancient wisdom and modern science. Drawing from timeless Vedic teachings, Energy Healing, the Law of Attraction, and the power of Habit Science, I invite you to embark on a journey of self-discovery and lasting change. Together, we’ll explore practical and profound ways to align your inner and outer worlds, creating a life that truly resonates with your highest self.
@@ -205,7 +218,7 @@ function App() {
                       <span className="stat-label">Lives Transformed</span>
                     </div>
                     <div className="stat-item">
-                      <span className="stat-number">100+</span>
+                      <span className="stat-number">200+</span>
                       <span className="stat-label">Seminars & Workshops</span>
                     </div>
                   </div>
@@ -488,7 +501,32 @@ function App() {
         <div className="container">
           <h2>Ready to Transform Your Life?</h2>
           <p>Take the first step towards a life of balance, abundance, and fulfillment. Let's work together to unlock your true potential and create lasting positive change.</p>
-          <a href="mailto:connect@sankaashbharadwaj.in" className="contact-button">Get In Touch</a>
+          <div className="contact-icons">
+            <a
+              href={WHATSAPP_LINK}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="contact-icon"
+              title="Chat on WhatsApp"
+            >
+              <FaWhatsapp size={36} />
+            </a>
+            <a
+              href={`mailto:${EMAIL}`}
+              className="contact-icon"
+              title="Send Email"
+            >
+              <FaEnvelope size={36} />
+            </a>
+            <a
+              href={`tel:${PHONE}`}
+              className="contact-icon"
+              title="Call"
+              onClick={handlePhoneClick}
+            >
+              <FaPhone size={36} />
+            </a>
+          </div>
         </div>
       </section>
     </>
