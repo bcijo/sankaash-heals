@@ -311,7 +311,7 @@ body {
     margin-bottom: 4rem;
 }
 
-.corporate-text h2 {
+.corporate-content h2 {
     font-size: 2.5rem;
     font-weight: 700;
     margin-bottom: 1rem;
@@ -1715,8 +1715,8 @@ html {
 
 /* Logo Image Styling */
 .logo-image {
-    width: 40px;
-    height: 40px;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
     margin-right: 10px;
     vertical-align: middle;
