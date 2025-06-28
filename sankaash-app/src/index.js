@@ -3,6 +3,7 @@ import { createRoot } from 'react-dom/client';
 import './index.css';
 import App from './App';
 import Corporate from './Corporate';
+import Edu from './edu';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import reportWebVitals from './reportWebVitals';
@@ -16,6 +17,7 @@ root.render(
         <Routes>
           <Route path="/" element={<App />} />
           <Route path="/corporate" element={<Corporate />} />
+          <Route path="/edu" element={<Edu />} />
         </Routes>
       </AnimatePresence>
     </BrowserRouter>

@@ -379,6 +379,10 @@ body {
   background: white;
 }
 
+.educational-text > .cta-button {
+  margin-top: 30px;
+}
+
 .educational-content {
   display: grid;
   grid-template-columns: 1fr 1fr;
