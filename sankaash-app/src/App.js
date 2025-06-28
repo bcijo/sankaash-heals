@@ -445,17 +445,13 @@ function App() {
       <section id="educational" className="educational">
         <div className="container">
           <div className="educational-content">
-            <div className="educational-image">
-              <img src={process.env.PUBLIC_URL + '/image4.jpg'} alt="Educational Workshops for Teens" />
-            </div>
+            <img src={process.env.PUBLIC_URL + '/image4.jpg'} alt="Educational Workshops for Teens" />
             <div className="educational-text">
               <h2>Educational Programs</h2>
               <p>
-                <br /><br />
-                Our educational programs are designed to equip teens and young adults with essential life skills to navigate the challenges of modern life. Through interactive workshops, we address critical topics such as self-confidence, positive habit formation, mindful social media use, bullying prevention, and addiction awareness.
-                <br /><br />
-                Led by Sankaash S Bharadwaj, a seasoned expert with over 13 years of experience in energy healing and coaching, these workshops combine ancient wisdom with modern science to create transformative learning experiences.
-              </p>
+                <br />
+                Our educational programs empower teens and young adults with essential life skills through interactive workshops on self-confidence, positive habits, mindful social media use, bullying prevention, and addiction awareness. Led by Sankaash S Bharadwaj, a seasoned expert with over 13 years of experience in energy healing and coaching, these sessions blend ancient wisdom with modern science to create impactful and transformative learning experiences.
+                <br /></p>
               <Link to="/edu" className="cta-button">Explore Educational Programs</Link>
             </div>
           </div>
