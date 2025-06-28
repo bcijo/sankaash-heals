@@ -101,6 +101,7 @@ body {
 .corporate-text h2 {
     font-size: 2.5rem;
     font-weight: 700;
+    margin-top: 1rem;
     margin-bottom: 1rem;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     -webkit-background-clip: text;
