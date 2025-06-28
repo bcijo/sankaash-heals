@@ -429,13 +429,13 @@ function App() {
       <section id="corporate" className="corporate">
         <div className="container">
           <div className="corporate-content">
+            <div className="corporate-image">
+              <img src={process.env.PUBLIC_URL + '/image3.jpg'} alt="Corporate Wellness" />
+            </div>
             <div className="corporate-text">
               <h2>Corporate Wellness Programs</h2>
               <p>In today's demanding work environment, stress and burnout are all too common. I believe that when employees feel balanced and supported, they bring their best to both work and life. That's why I offer wellness programs designed to help teams reduce stress, build better habits, and create a more positive and productive workplace.</p>
               <Link to="/corporate" className="cta-button">Explore Corporate Programs</Link>
-            </div>
-            <div className="corporate-image">
-              <img src={process.env.PUBLIC_URL + '/image3.jpg'} alt="Corporate Wellness" />
             </div>
           </div>
         </div>
@@ -445,6 +445,9 @@ function App() {
       <section id="educational" className="educational">
         <div className="container">
           <div className="educational-content">
+            <div className="educational-image">
+              <img src={process.env.PUBLIC_URL + '/image4.jpg'} alt="Educational Workshops for Teens" />
+            </div>
             <div className="educational-text">
               <h2>Educational Programs</h2>
               <p>
@@ -454,9 +457,6 @@ function App() {
                 Led by Sankaash S Bharadwaj, a seasoned expert with over 13 years of experience in energy healing and coaching, these workshops combine ancient wisdom with modern science to create transformative learning experiences.
               </p>
               <Link to="/edu" className="cta-button">Explore Educational Programs</Link>
-            </div>
-            <div className="educational-image">
-              <img src={process.env.PUBLIC_URL + '/image4.jpg'} alt="Educational Workshops for Teens" />
             </div>
           </div>
         </div>
