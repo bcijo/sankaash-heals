@@ -187,6 +187,10 @@ function App() {
     {
       review: "Hi, I attended one session only but before that i met him , I talked personally. I asked some questions and also asked to decode my dream. He replied with a sentence for that .His words i have taken very seriously and started analyzing what I am looking for. Finally I found it. The conversation with him made me think and analyze. This helped me a lot in my spiritual path. I am happy for that. Thank you 😊",
       name: "Uma Bhargavi",
+    },
+    {
+      review: "I'm so grateful for the energy cleansing sessions with Sankash! I felt lighter and happier afterward. He helped me gain clarity when I was uncertain, and his guidance encouraged me to stay positive - even when things got tough, I reminded myself that things can get better, and they did! He also shared valuable tips on pausing before reacting, which made me reflect on my actions. Thank you, Sankash, for your support and wisdom!",
+      name: "Pankaj Sharma",
     }
   ];
 
