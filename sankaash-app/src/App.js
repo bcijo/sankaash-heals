@@ -5,8 +5,9 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
 function App() {
-  // Smooth scrolling for navigation links
+  // Smooth scrolling for navigation links and hash-based navigation
   useEffect(() => {
+    // Handle in-page scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -21,6 +22,20 @@ function App() {
         }
       });
     });
+
+    // Handle scrolling to section based on URL hash
+    const hash = window.location.hash;
+    if (hash) {
+      const targetElement = document.querySelector(hash);
+      if (targetElement) {
+        setTimeout(() => {
+          targetElement.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }, 100); // Delay to ensure DOM is fully rendered
+      }
+    }
 
     // Header scroll effect
     function handleHeaderScroll() {
