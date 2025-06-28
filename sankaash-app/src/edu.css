@@ -87,7 +87,7 @@ body {
 /* Educational Section */
 .educational {
   padding: 5rem 2rem;
-  background: white;
+  background: #f0f5ff; /* Light blue for educational page */
 }
 
 .educational-content {

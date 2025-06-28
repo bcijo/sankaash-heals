@@ -490,11 +490,16 @@ body {
   position: relative;
 }
 
+.reviews-carousel:active {
+  cursor: grabbing;
+}
+
 .reviews-track {
   display: flex;
   gap: 2.5rem;
   animation: reviews-scroll 40s linear infinite;
   will-change: transform;
+  transition: transform 0.5s ease-out;
 }
 
 .reviews-carousel:focus .reviews-track,

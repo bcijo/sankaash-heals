@@ -102,9 +102,13 @@ function App() {
     };
   }, []); // Empty dependency array means this runs once on mount
 
-  // Reviews carousel pause/play logic
+  // Reviews carousel pause/play and drag logic
   const reviewsRef = useRef(null);
   const [isPaused, setIsPaused] = useState(false);
+  const isDragging = useRef(false);
+  const startX = useRef(0);
+  const translateX = useRef(0);
+  const prevTranslateX = useRef(0);
 
   useEffect(() => {
     const reviewsEl = reviewsRef.current;
@@ -121,18 +125,58 @@ function App() {
       reviewsEl.style.animationPlayState = 'running';
     }
 
+    function startDrag(e) {
+      isDragging.current = true;
+      startX.current = e.pageX;
+      prevTranslateX.current = translateX.current;
+      pauseCarousel();
+      reviewsEl.style.transition = 'none';
+    }
+
+    function drag(e) {
+      if (!isDragging.current) return;
+      const diff = e.pageX - startX.current;
+      translateX.current = prevTranslateX.current + diff;
+      reviewsEl.querySelector('.reviews-track').style.transform = `translateX(${translateX.current}px)`;
+    }
+
+    function endDrag() {
+      if (isDragging.current) {
+        isDragging.current = false;
+        reviewsEl.style.transition = 'transform 0.5s ease-out';
+        // Optional: Add bounds checking to snap back within limits if needed
+      }
+      if (!isPaused) {
+        playCarousel();
+      }
+    }
+
     reviewsEl.addEventListener('mouseenter', pauseCarousel);
     reviewsEl.addEventListener('mouseleave', playCarousel);
-    reviewsEl.addEventListener('mousedown', pauseCarousel);
-    reviewsEl.addEventListener('mouseup', playCarousel);
+    reviewsEl.addEventListener('mousedown', startDrag);
+    document.addEventListener('mousemove', drag);
+    document.addEventListener('mouseup', endDrag);
+    reviewsEl.addEventListener('touchstart', (e) => {
+      startX.current = e.touches[0].pageX;
+      startDrag(e);
+    });
+    reviewsEl.addEventListener('touchmove', (e) => {
+      e.preventDefault();
+      drag({ pageX: e.touches[0].pageX });
+    });
+    reviewsEl.addEventListener('touchend', endDrag);
 
     return () => {
       reviewsEl.removeEventListener('mouseenter', pauseCarousel);
       reviewsEl.removeEventListener('mouseleave', playCarousel);
-      reviewsEl.removeEventListener('mousedown', pauseCarousel);
-      reviewsEl.removeEventListener('mouseup', playCarousel);
+      reviewsEl.removeEventListener('mousedown', startDrag);
+      document.removeEventListener('mousemove', drag);
+      document.removeEventListener('mouseup', endDrag);
+      reviewsEl.removeEventListener('touchstart', startDrag);
+      reviewsEl.removeEventListener('touchmove', drag);
+      reviewsEl.removeEventListener('touchend', endDrag);
     };
-  }, []);
+  }, [isPaused]);
 
   // Helper to get initials from name
   function getInitials(name) {
