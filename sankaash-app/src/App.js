@@ -117,13 +117,36 @@ function App() {
     };
   }, []);
 
-  // Helper to get placeholder emoji based on name (simple gender guess)
-  function getPlaceholderEmoji(name) {
-    // Very basic: if name ends with 'a' or 'i', assume woman, else man
-    if (/a$|i$/i.test(name.split(' ')[0])) {
-      return "🧑‍🦰"; // faceless woman
+  // Helper to get initials from name
+  function getInitials(name) {
+    if (!name) return "";
+    const parts = name.trim().split(' ');
+    if (parts.length === 1) return parts[0][0].toUpperCase();
+    return (parts[0][0] + parts[parts.length - 1][0]).toUpperCase();
+  }
+
+  // Helper to get a random gradient color
+  function getRandomGradient(seed) {
+    // Use a seeded pseudo-random generator for consistent color per name
+    let hash = 0;
+    for (let i = 0; i < seed.length; i++) {
+      hash = seed.charCodeAt(i) + ((hash << 5) - hash);
     }
-    return "🧑"; // faceless man
+    // Pick from a palette of gradients
+    const gradients = [
+      'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+      'linear-gradient(135deg, #ff9966 0%, #ff5e62 100%)',
+      'linear-gradient(135deg, #43cea2 0%, #185a9d 100%)',
+      'linear-gradient(135deg, #f7971e 0%, #ffd200 100%)',
+      'linear-gradient(135deg, #f953c6 0%, #b91d73 100%)',
+      'linear-gradient(135deg, #30cfd0 0%, #330867 100%)',
+      'linear-gradient(135deg, #11998e 0%, #38ef7d 100%)',
+      'linear-gradient(135deg, #fc5c7d 0%, #6a82fb 100%)',
+      'linear-gradient(135deg, #ee9ca7 0%, #ffdde1 100%)',
+      'linear-gradient(135deg, #00c3ff 0%, #ffff1c 100%)'
+    ];
+    const idx = Math.abs(hash) % gradients.length;
+    return gradients[idx];
   }
 
   // Track which review card is expanded (by index)
@@ -144,6 +167,29 @@ function App() {
       // No preventDefault
     }
   }
+
+  // Reviews data (move outside render for clarity)
+  const reviewsArr = [
+    {
+      review: "Sankaash brother is authentic in his approach and shares teachings from his experiences directly which makes him very approachable.",
+      name: "R. Varuneshwaran",
+    },
+    {
+      review: "✨ Grateful for the Law of Attraction Training! This powerful programme helped me shift my mindset 🌈, stay focused 🎯, and attract positivity 🌟. It made a real impact on both my personal life 💫 and professional journey 🚀. Thank you Sankaash ji for this magical transformation! 🙏💖",
+      name: "Bobbili Mamatha",
+    },
+    {
+      review: "Attending Sankaash's sessions has truly been a turning point in my life. I’ve started feeling genuinely happy about the little things I have, something I used to overlook. His guidance helped me build a simple yet meaningful routine, and writing about my daily experiences has become a powerful habit that brings clarity and peace. What I appreciate the most is that he’s just a call away whenever I need guidance on my spiritual journey. Thank you so much, Sankaash, for being such a grounding presence!",
+      name: "Chandana Prasad",
+    },
+    {
+      review: "Hi, I attended one session only but before that i met him , I talked personally. I asked some questions and also asked to decode my dream. He replied with a sentence for that .His words i have taken very seriously and started analyzing what I am looking for. Finally I found it. The conversation with him made me think and analyze. This helped me a lot in my spiritual path. I am happy for that. Thank you 😊",
+      name: "Uma Bhargavi",
+    }
+  ];
+
+  // Precompute gradients for all reviews (for both loops)
+  const gradients = reviewsArr.map(r => getRandomGradient(r.name));
 
   // The actual JSX that will be rendered
   return (
@@ -446,29 +492,9 @@ function App() {
             <div className="reviews-track">
               {/* Repeat reviews twice for seamless looping */}
               {[1, 2].map(loop =>
-                [ // 4 placeholder reviews
-                  {
-                    review: "Sankaash brother is authentic in his approach and shares teachings from his experiences directly which makes him very approachable.",
-                    name: "R. Varuneshwaran",
-                    img: process.env.PUBLIC_URL + '/review1.jpg'
-                  },
-                  {
-                    review: "✨ Grateful for the Law of Attraction Training! This powerful programme helped me shift my mindset 🌈, stay focused 🎯, and attract positivity 🌟. It made a real impact on both my personal life 💫 and professional journey 🚀. Thank you Sankaash ji for this magical transformation! 🙏💖",
-                    name: "Bobbili Mamatha",
-                    img: process.env.PUBLIC_URL + '/review2.jpg'
-                  },
-                  {
-                    review: "Attending Sankaash's sessions has truly been a turning point in my life. I’ve started feeling genuinely happy about the little things I have, something I used to overlook. His guidance helped me build a simple yet meaningful routine, and writing about my daily experiences has become a powerful habit that brings clarity and peace. What I appreciate the most is that he’s just a call away whenever I need guidance on my spiritual journey. Thank you so much, Sankaash, for being such a grounding presence!",
-                    name: "Chandana Prasad",
-                    img: "" // No image, will show placeholder
-                  },
-                  {
-                    review: "Hi, I attended one session only but before that i met him , I talked personally. I asked some questions and also asked to decode my dream. He replied with a sentence for that .His words i have taken very seriously and started analyzing what I am looking for. Finally I found it. The conversation with him made me think and analyze. This helped me a lot in my spiritual path. I am happy for that. Thank you 😊",
-                    name: "Uma Bhargavi",
-                    img: "" // No image, will show placeholder
-                  }
-                ].map((r, idx) => {
-                  const cardIndex = loop * 10 + idx; // unique index for each card
+                reviewsArr.map((r, idx) => {
+                  const cardIndex = loop * 10 + idx;
+                  const bubbleGradient = gradients[idx];
                   return (
                     <div
                       className={`review-card${expandedReview === cardIndex ? " expanded" : ""}`}
@@ -482,15 +508,16 @@ function App() {
                       }}
                       aria-expanded={expandedReview === cardIndex}
                     >
-                      <div className="review-image">
-                        {r.img ?
-                          <img src={r.img} alt={r.name + " portrait"} onError={e => { e.target.onerror = null; e.target.style.display = 'none'; e.target.parentNode.innerHTML = getPlaceholderEmoji(r.name); }} />
-                          :
-                          <span className="review-placeholder-emoji" aria-label="portrait placeholder">{getPlaceholderEmoji(r.name)}</span>
-                        }
+                      <div className="review-header">
+                        <div
+                          className="review-image"
+                          style={{ background: bubbleGradient }}
+                        >
+                          <span className="review-initials" aria-label="initials">{getInitials(r.name)}</span>
+                        </div>
+                        <div className="review-name">{r.name}</div>
                       </div>
                       <div className="review-text">"{r.review}"</div>
-                      <div className="review-name">{r.name}</div>
                     </div>
                   );
                 })
