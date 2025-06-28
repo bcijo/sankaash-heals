@@ -275,7 +275,10 @@ function App() {
       {/* Header */}
       <header className="header">
         <nav className="nav">
-          <div className="logo">Sankaash Bharadwaj</div>
+          <div className="logo">
+            <img src={process.env.PUBLIC_URL + '/logo.png'} alt="Sankaash Bharadwaj Logo" className="logo-image" />
+            Sankaash Bharadwaj
+          </div>
           <ul className="nav-links">
             <li><a href="#about">About</a></li>
             <li><a href="#services">Services</a></li>
