@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { FaWhatsapp, FaEnvelope, FaPhone } from 'react-icons/fa';
 import './edu.css';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
@@ -107,6 +108,23 @@ function Edu() {
           </div>
         </div>
       </section>
+      <section id="contact" className="contact">
+          <div className="container">
+            <h2>Get in Touch</h2>
+            <p>Ready to transform lives through education? Contact us now.</p>
+            <div className="contact-icons">
+              <a href="https://wa.me/message/DGDETAOHXV72N1" target="_blank" rel="noopener noreferrer" className="contact-icon" title="Chat on WhatsApp">
+                <FaWhatsapp size={36} />
+              </a>
+              <a href="mailto:connect@sankaashbharadwaj.in" className="contact-icon" title="Send Email">
+                <FaEnvelope size={36} />
+              </a>
+              <a href="tel:+919113529050" className="contact-icon" title="Call">
+                <FaPhone size={36} />
+              </a>
+            </div>
+          </div>
+        </section>
     </motion.div>
   );
 }
