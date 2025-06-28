@@ -3,6 +3,7 @@ import './App.css';
 import { FaWhatsapp, FaEnvelope, FaPhone } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import CircularReviewsGallery from './components/CircularReviewsGallery';
 
 function App() {
   // Smooth scrolling for navigation links and hash-based navigation
@@ -102,116 +103,7 @@ function App() {
     };
   }, []); // Empty dependency array means this runs once on mount
 
-  // Reviews carousel pause/play and drag logic
-  const reviewsRef = useRef(null);
-  const [isPaused, setIsPaused] = useState(false);
-  const isDragging = useRef(false);
-  const startX = useRef(0);
-  const translateX = useRef(0);
-  const prevTranslateX = useRef(0);
 
-  useEffect(() => {
-    const reviewsEl = reviewsRef.current;
-    if (!reviewsEl) return;
-
-    let animationPlayState = 'running';
-
-    function pauseCarousel() {
-      animationPlayState = 'paused';
-      reviewsEl.style.animationPlayState = 'paused';
-    }
-    function playCarousel() {
-      animationPlayState = 'running';
-      reviewsEl.style.animationPlayState = 'running';
-    }
-
-    function startDrag(e) {
-      isDragging.current = true;
-      startX.current = e.pageX;
-      prevTranslateX.current = translateX.current;
-      pauseCarousel();
-      reviewsEl.style.transition = 'none';
-    }
-
-    function drag(e) {
-      if (!isDragging.current) return;
-      const diff = e.pageX - startX.current;
-      translateX.current = prevTranslateX.current + diff;
-      reviewsEl.querySelector('.reviews-track').style.transform = `translateX(${translateX.current}px)`;
-    }
-
-    function endDrag() {
-      if (isDragging.current) {
-        isDragging.current = false;
-        reviewsEl.style.transition = 'transform 0.5s ease-out';
-        // Optional: Add bounds checking to snap back within limits if needed
-      }
-      if (!isPaused) {
-        playCarousel();
-      }
-    }
-
-    reviewsEl.addEventListener('mouseenter', pauseCarousel);
-    reviewsEl.addEventListener('mouseleave', playCarousel);
-    reviewsEl.addEventListener('mousedown', startDrag);
-    document.addEventListener('mousemove', drag);
-    document.addEventListener('mouseup', endDrag);
-    reviewsEl.addEventListener('touchstart', (e) => {
-      startX.current = e.touches[0].pageX;
-      startDrag(e);
-    });
-    reviewsEl.addEventListener('touchmove', (e) => {
-      e.preventDefault();
-      drag({ pageX: e.touches[0].pageX });
-    });
-    reviewsEl.addEventListener('touchend', endDrag);
-
-    return () => {
-      reviewsEl.removeEventListener('mouseenter', pauseCarousel);
-      reviewsEl.removeEventListener('mouseleave', playCarousel);
-      reviewsEl.removeEventListener('mousedown', startDrag);
-      document.removeEventListener('mousemove', drag);
-      document.removeEventListener('mouseup', endDrag);
-      reviewsEl.removeEventListener('touchstart', startDrag);
-      reviewsEl.removeEventListener('touchmove', drag);
-      reviewsEl.removeEventListener('touchend', endDrag);
-    };
-  }, [isPaused]);
-
-  // Helper to get initials from name
-  function getInitials(name) {
-    if (!name) return "";
-    const parts = name.trim().split(' ');
-    if (parts.length === 1) return parts[0][0].toUpperCase();
-    return (parts[0][0] + parts[parts.length - 1][0]).toUpperCase();
-  }
-
-  // Helper to get a random gradient color
-  function getRandomGradient(seed) {
-    // Use a seeded pseudo-random generator for consistent color per name
-    let hash = 0;
-    for (let i = 0; i < seed.length; i++) {
-      hash = seed.charCodeAt(i) + ((hash << 5) - hash);
-    }
-    // Pick from a palette of gradients
-    const gradients = [
-      'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-      'linear-gradient(135deg, #ff9966 0%, #ff5e62 100%)',
-      'linear-gradient(135deg, #43cea2 0%, #185a9d 100%)',
-      'linear-gradient(135deg, #f7971e 0%, #ffd200 100%)',
-      'linear-gradient(135deg, #f953c6 0%, #b91d73 100%)',
-      'linear-gradient(135deg, #30cfd0 0%, #330867 100%)',
-      'linear-gradient(135deg, #11998e 0%, #38ef7d 100%)',
-      'linear-gradient(135deg, #fc5c7d 0%, #6a82fb 100%)',
-      'linear-gradient(135deg, #ee9ca7 0%, #ffdde1 100%)',
-      'linear-gradient(135deg, #00c3ff 0%, #ffff1c 100%)'
-    ];
-    const idx = Math.abs(hash) % gradients.length;
-    return gradients[idx];
-  }
-
-  // Track which review card is expanded (by index)
-  const [expandedReview, setExpandedReview] = useState(null);
 
   // Contact details
   const WHATSAPP_LINK = 'https://wa.me/message/DGDETAOHXV72N1'; // Replace with your WhatsApp business link
@@ -253,8 +145,7 @@ function App() {
     }
   ];
 
-  // Precompute gradients for all reviews (for both loops)
-  const gradients = reviewsArr.map(r => getRandomGradient(r.name));
+
 
   // Animation variants for page transition
   const pageVariants = {
@@ -370,25 +261,7 @@ function App() {
                 
                 <div className="about-credentials">
                   <div className="credential-item">
-                    <div className="credential-icon">🧘</div>
-                    <div className="credential-text">
-                      <h5>Master Healer and Life Coach</h5>
-                      <p>Certified in diverse healing and coaching modalities</p>
-                    </div>
-                  </div>
-                  <div className="credential-item">
-                    <div className="credential-icon">🎓</div>
-                    <div className="credential-text">
-                      <h5>Scientific Integration</h5>
-                      <p>A scientific integration of Habit Science, Energy Healing, the Law of Attraction, and Neuroscience.</p>
-                    </div>
-                  </div>
-                  <div className="credential-item">
-                    <div className="credential-icon">🧠</div>
-                    <div className="credential-text">
-                      <h5>Psychologist in the Making</h5>
-                      <p>Blending academic knowledge with real-world experience to empower personal transformation.</p>
-                    </div>
+                    {/* Credentials can be added here later if needed */}
                   </div>
                 </div>
               </div>
@@ -398,9 +271,9 @@ function App() {
       </section>
 
       {/* Services Section */}
-      <section id="services" className="services services-white">
+      <section id="services" className="services-section">
         <div className="container">
-          <h2 className="section-title">What I Offer</h2>
+          <h2>Our Services</h2>
           <p className="section-subtitle">Comprehensive healing and coaching services designed to transform your life from the inside out</p>
           
           <div className="services-grid">
@@ -460,50 +333,7 @@ function App() {
 
       {/* Client Reviews Section */}
       <section id="reviews" className="reviews-section">
-        <div className="container">
-          <h2 className="reviews-title">✨ Voices of Transformation ✨</h2>
-          <div
-            className="reviews-carousel"
-            ref={reviewsRef}
-            tabIndex={0}
-            aria-label="Client Reviews Carousel"
-          >
-            <div className="reviews-track">
-              {/* Repeat reviews twice for seamless looping */}
-              {[1, 2].map(loop =>
-                reviewsArr.map((r, idx) => {
-                  const cardIndex = loop * 10 + idx;
-                  const bubbleGradient = gradients[idx];
-                  return (
-                    <div
-                      className={`review-card${expandedReview === cardIndex ? " expanded" : ""}`}
-                      key={loop + '-' + idx}
-                      onClick={() => setExpandedReview(expandedReview === cardIndex ? null : cardIndex)}
-                      tabIndex={0}
-                      onKeyDown={e => {
-                        if (e.key === 'Enter' || e.key === ' ') {
-                          setExpandedReview(expandedReview === cardIndex ? null : cardIndex);
-                        }
-                      }}
-                      aria-expanded={expandedReview === cardIndex}
-                    >
-                      <div className="review-header">
-                        <div
-                          className="review-image"
-                          style={{ background: bubbleGradient }}
-                        >
-                          <span className="review-initials" aria-label="initials">{getInitials(r.name)}</span>
-                        </div>
-                        <div className="review-name">{r.name}</div>
-                      </div>
-                      <div className="review-text">"{r.review}"</div>
-                    </div>
-                  );
-                })
-              )}
-            </div>
-          </div>
-        </div>
+        <CircularReviewsGallery reviews={reviewsArr} />
       </section>
 
       {/* Contact Section */}
