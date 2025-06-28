@@ -29,7 +29,7 @@ body {
     width: 100%;
     z-index: 1000;
     backdrop-filter: blur(20px);
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 240, 245, 0.9); /* Slightly pink background */
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     transition: all 0.3s ease;
 }

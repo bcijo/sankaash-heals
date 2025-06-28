@@ -30,7 +30,7 @@ function Corporate() {
             <li><a href="#about">About</a></li>
             <li><a href="#services">Services</a></li>
             <li><Link to="/corporate">Corporate</Link></li>
-            <li><a href="#educational">Educational</a></li>
+            <li><Link to="/edu">Educational</Link></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
         </nav>
