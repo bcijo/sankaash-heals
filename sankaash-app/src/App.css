@@ -145,7 +145,7 @@ body {
 .cta-button {
     display: inline-block;
     padding: 1rem 2rem;
-    background: rgba(255, 255, 255, 0.2);
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
     text-decoration: none;
     border-radius: 50px;
@@ -157,7 +157,7 @@ body {
 }
 
 .cta-button:hover {
-    background: rgba(255, 255, 255, 0.3);
+    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
     transform: translateY(-2px);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }

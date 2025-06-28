@@ -1,13 +1,24 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
+import { createRoot } from 'react-dom/client';
 import './index.css';
 import App from './App';
+import Corporate from './Corporate';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { AnimatePresence } from 'framer-motion';
 import reportWebVitals from './reportWebVitals';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const container = document.getElementById('root');
+const root = createRoot(container);
 root.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <AnimatePresence mode="wait">
+        <Routes>
+          <Route path="/" element={<App />} />
+          <Route path="/corporate" element={<Corporate />} />
+        </Routes>
+      </AnimatePresence>
+    </BrowserRouter>
   </React.StrictMode>
 );
 
