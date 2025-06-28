@@ -332,7 +332,7 @@ function App() {
                   <div className="about-impact">
                     <h4>Proven Impact</h4>
                     <p className="about-text">
-                      Through <strong>workshops, one-on-one coaching</strong>, and <strong>energy healing sessions</strong>, Sankaash has transformed many lives by inspiring <strong>self-awareness</strong>, promoting <strong>well-being</strong>, and guiding clients toward <strong>abundance</strong> and <strong>fulfillment</strong>.
+                      Through <strong>workshops, one-on-one coaching</strong>, and <strong>energy healing sessions</strong>, Sankaash has transformed many lives by inspiring <strong>self-awareness</strong>, promoting <strong>well-being</strong>, and guiding clients towards <strong>abundance</strong> and <strong>fulfillment</strong>.
                     </p>
                   </div>
                   
