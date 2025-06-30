@@ -1046,6 +1046,11 @@ body {
     }
 
     /* Service Cards - Small Mobile */
+    .services-section h2 {
+        font-size: 1.8rem;
+        padding: 0 1rem;
+    }
+
     .service-card {
         padding: 1.5rem 1rem;
     }

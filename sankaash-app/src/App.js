@@ -296,7 +296,7 @@ function App() {
       {/* Services Section */}
       <section id="services" className="services-section">
         <div className="container">
-          <h2>Personalized Wellness Programs</h2>
+          <h2>Tailored Wellness Programs</h2>
           <p className="section-subtitle">Comprehensive healing and coaching services designed to transform your life from the inside out</p>
           
           <div className="services-grid">
