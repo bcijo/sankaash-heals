@@ -143,6 +143,10 @@ function App() {
     {
       review: "I'm so grateful for the energy cleansing sessions with Sankash! I felt lighter and happier afterward. He helped me gain clarity when I was uncertain, and his guidance encouraged me to stay positive - even when things got tough, I reminded myself that things can get better, and they did! He also shared valuable tips on pausing before reacting, which made me reflect on my actions. Thank you, Sankash, for your support and wisdom!",
       name: "Pankaj Sharma",
+    },
+    {
+      review: "Truly gifted! Your energy is incredibly calming and powerful. I could feel their deep knowledge and presence in every session. Super powerful alignment of divine with you 🙏",
+      name: "Priyanka Agarwal",
     }
   ];
 
