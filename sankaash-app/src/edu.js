@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { FaWhatsapp, FaEnvelope, FaPhone } from 'react-icons/fa';
+import { FaWhatsapp, FaEnvelope, FaPhone, FaInstagram } from 'react-icons/fa';
 import './edu.css';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
@@ -15,6 +15,8 @@ function Edu() {
     animate: { opacity: 1, x: 0 },
     exit: { opacity: 0, x: 100 }
   };
+
+  const INSTAGRAM_LINK = 'https://www.instagram.com/sankaash_bharadwaj_2.0?igsh=YzljYTk1ODg3Zg==';
 
   return (
     <motion.div
@@ -115,6 +117,9 @@ function Edu() {
             <div className="contact-icons">
               <a href="https://wa.me/message/DGDETAOHXV72N1" target="_blank" rel="noopener noreferrer" className="contact-icon" title="Chat on WhatsApp">
                 <FaWhatsapp size={36} />
+              </a>
+              <a href={INSTAGRAM_LINK} target="_blank" rel="noopener noreferrer" className="contact-icon" title="Instagram">
+                <FaInstagram size={36} />
               </a>
               <a href="mailto:connect@sankaashbharadwaj.in" className="contact-icon" title="Send Email">
                 <FaEnvelope size={36} />

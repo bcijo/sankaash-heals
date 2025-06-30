@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import './App.css';
-import { FaWhatsapp, FaEnvelope, FaPhone } from 'react-icons/fa';
+import { FaWhatsapp, FaEnvelope, FaPhone, FaInstagram } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import CircularReviewsGallery from './components/CircularReviewsGallery';
@@ -109,6 +109,7 @@ function App() {
   const WHATSAPP_LINK = 'https://wa.me/message/DGDETAOHXV72N1'; // Replace with your WhatsApp business link
   const EMAIL = 'connect@sankaashbharadwaj.in'; // Your business email
   const PHONE = '+919113529050'; // Replace with your business phone number
+  const INSTAGRAM_LINK = 'https://www.instagram.com/sankaash_bharadwaj_2.0?igsh=YzljYTk1ODg3Zg==';
 
   function handlePhoneClick(e) {
     if (window.innerWidth > 1024) {
@@ -368,6 +369,15 @@ function App() {
               title="Chat on WhatsApp"
             >
               <FaWhatsapp size={36} />
+            </a>
+            <a
+              href={INSTAGRAM_LINK}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="contact-icon"
+              title="Instagram"
+            >
+              <FaInstagram size={36} />
             </a>
             <a
               href={`mailto:${EMAIL}`}
