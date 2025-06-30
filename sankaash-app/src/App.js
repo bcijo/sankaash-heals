@@ -261,7 +261,25 @@ function App() {
                 
                 <div className="about-credentials">
                   <div className="credential-item">
-                    {/* Credentials can be added here later if needed */}
+                    <div className="credential-icon">🧘</div>
+                        <div className="credential-text">
+                          <h5>Master Healer and Life Coach</h5>
+                          <p>Certified in diverse healing and coaching modalities</p>
+                        </div>
+                      </div>
+                      <div className="credential-item">
+                        <div className="credential-icon">🎓</div>
+                        <div className="credential-text">
+                          <h5>Scientific Integration</h5>
+                          <p>A scientific integration of Habit Science, Energy Healing, the Law of Attraction, and Neuroscience.</p>
+                        </div>
+                      </div>
+                      <div className="credential-item">
+                        <div className="credential-icon">🧠</div>
+                        <div className="credential-text">
+                          <h5>Psychologist in the Making</h5>
+                          <p>Blending academic knowledge with real-world experience to empower personal transformation.</p>
+                    </div>
                   </div>
                 </div>
               </div>
