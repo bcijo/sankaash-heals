@@ -147,6 +147,18 @@ function App() {
     {
       review: "Truly gifted! Your energy is incredibly calming and powerful. I could feel their deep knowledge and presence in every session. Super powerful alignment of divine with you 🙏",
       name: "Priyanka Agarwal",
+    },
+    {
+      review: "Sankaash is a very good law of attraction teacher, at such an young age he has mastered the subject with diligent practice. He takes you through the process step by step. He is an immensely good energy healer.  His ability to hold your hand through the entire process of transformation is commendable. I would recommend everyone to go through his session. Thank you Sankaash for doing such a great job in transforming lives.",
+      name: "Supriya",
+    },
+    {
+      review: "At 19 years old, discovering the Law of Attraction has really changed the way I see life and my goals. I've come to understand that my thoughts and emotions have powerful abilities to create my reality. With a positive focus on intentions and believing in my aspirations, I've begun bringing into my life opportunities and experiences that I really desire. It's also learned me to remain positive, be patient, and trust the process, and it has made a huge impact on my confidence and overall outlook and the credit has to go to Mr. Sankaash Bharadwaj to give me a fresh perspective.",
+      name: "Samskruti",
+    },
+    {
+      review: "My name is Srihari and me along with my wife Padmasri are spiritual seekers in our own way. On our quest to understand the power of universe and cosmos, we came across the course on Law of Attraction conducted by Sankaash Bhardwaj. This was an eye opener to understand how the power of manifestation works and to materlize. Sankaash conducted a very structured series of sessions that paved way for us to adopt to materlize our beliefs. We continue to practice it in our daily lives. Thanks a lot Sankaash for conducting such a wonderful course and teaching the power of manifestation.",
+      name: "Padmashri & Srihari",
     }
   ];
 
@@ -194,7 +206,7 @@ function App() {
         <div className="hero-content">
           <div className="hero-text">
             <h1>Sankaash Bharadwaj</h1>
-            <div className="hero-subtitle">Energy Healer • Law of Attraction Teacher • Life Coach • Habit Coach</div>
+            <div className="hero-subtitle">Spritual Teacher • Energy Healer • Law of Attraction Teacher • Life Coach • Habit Coach</div>
             <div className="hero-description">
             Unlock your true potential and transform your life with a perfect blend of ancient wisdom and modern science. Drawing from timeless Vedic teachings, Energy Healing, the Law of Attraction, and the power of Habit Science, I invite you to embark on a journey of self-discovery and lasting change. Together, we’ll explore practical and profound ways to align your inner and outer worlds, creating a life that truly resonates with your highest self.
             </div>
