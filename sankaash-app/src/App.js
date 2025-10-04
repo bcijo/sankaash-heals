@@ -206,7 +206,7 @@ function App() {
         <div className="hero-content">
           <div className="hero-text">
             <h1>Sankaash Bharadwaj</h1>
-            <div className="hero-subtitle">Spritual Teacher • Energy Healer • Law of Attraction Teacher • Life Coach • Habit Coach</div>
+            <div className="hero-subtitle">Energy Healer • Law of Attraction Teacher • Life Coach • Habit Coach</div>
             <div className="hero-description">
             Unlock your true potential and transform your life with a perfect blend of ancient wisdom and modern science. Drawing from timeless Vedic teachings, Energy Healing, the Law of Attraction, and the power of Habit Science, I invite you to embark on a journey of self-discovery and lasting change. Together, we’ll explore practical and profound ways to align your inner and outer worlds, creating a life that truly resonates with your highest self.
             </div>
@@ -314,20 +314,20 @@ function App() {
           <div className="services-grid">
             <div className="service-card">
               <div className="service-icon">⚡</div>
-              <h3>Energy Healing with Crystals</h3>
-              <p>At the core of what I do is energy healing with crystals, a powerful practice that addresses the root cause of any physical, mental, or emotional issue. Whether you're dealing with chronic pain, stress, anxiety, or emotional blocks, I use intuitive and proven techniques to restore balance, realign your energy, and activate your body's natural ability to heal itself.</p>
+              <h3>Genetic Brain Profiling (GBP)</h3>
+              <p>Genetic Brain Profiling is a scientific method used to assess and understand an individual’s unique personality, strengths, learning style, and behavioural traits through the study of brain patterns via fingerprint analysis and neurogenetic insights. This profiling helps map inborn potential, career choices, and personal development paths, empowering people of all ages to make informed life decisions that align with their natural abilities.</p>
             </div>
             
             <div className="service-card">
               <div className="service-icon">🎯</div>
               <h3>Habit Coaching</h3>
-              <p>Let's transform the habits that hold you back and create ones that support the life you truly want. Together, we'll build simple, sustainable routines that align with your goals and make growth feel natural.</p>
+              <p>Many of us have tried to make changes in life through motivation alone, only to face the guilt and frustration when those changes don’t stick. Through my habit coaching and workshops, I help individuals move beyond fleeting motivation to build lasting, sustainable change by reshaping their habits in alignment with their true desires and purpose, empowering them to create a life that genuinely reflects their authentic goals and values.</p>
             </div>
             
             <div className="service-card">
               <div className="service-icon">🌟</div>
-              <h3>Life Coaching</h3>
-              <p>Life can be messy, but you don't have to navigate it alone. I'm here to help you gain clarity, tackle challenges, and create a life that feels true to who you are and where you want to be.</p>
+              <h3>Law of attraction</h3>
+              <p>The law of attraction is one of the most powerful universal laws, and my mission is to help people truly understand how it works so they can use this transformative tool to discover their authentic selves and manifest their deepest desires. In my workshops and coaching sessions, I empower clients to clarify personal intentions, align their thoughts and energy, and take inspired action toward creating the life they truly want, turning dreams into real experiences.</p>
             </div>
           </div>
         </div>
