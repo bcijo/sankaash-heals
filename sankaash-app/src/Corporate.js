@@ -3,6 +3,8 @@ import { FaWhatsapp, FaEnvelope, FaPhone, FaInstagram } from 'react-icons/fa';
 import './Corporate.css';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import SpiritualBackground from './components/SpiritualBackground';
+import GlassCard from './components/GlassCard';
 
 function Corporate() {
   useEffect(() => {
@@ -25,9 +27,13 @@ function Corporate() {
       variants={pageVariants}
       transition={{ duration: 0.5 }}
     >
+      <SpiritualBackground />
       <header className="header">
         <nav className="nav">
-          <div className="logo">Sankaash Bharadwaj</div>
+          <div className="logo">
+            <img src={process.env.PUBLIC_URL + '/logo.png'} alt="Sankaash Bharadwaj Logo" className="logo-image" />
+            Sankaash Bharadwaj
+          </div>
           <ul className="nav-links">
             <li><Link to="/">Home</Link></li>
             <li><Link to="/#about">About</Link></li>
@@ -50,7 +56,7 @@ function Corporate() {
               <img src={process.env.PUBLIC_URL + '/image3.jpg'} alt="Corporate Wellness" />
             </div>
           </div>
-          
+
           <div className="corporate-services">
             <div className="corporate-service">
               <h4>Stress Management and Mindfulness</h4>
@@ -60,7 +66,7 @@ function Corporate() {
                 <li>Tools to bring more peace and clarity into everyday tasks</li>
               </ul>
             </div>
-            
+
             <div className="corporate-service">
               <h4>Habit Coaching for Success</h4>
               <ul>
@@ -69,7 +75,7 @@ function Corporate() {
                 <li>Making lasting changes feel achievable and natural</li>
               </ul>
             </div>
-            
+
             <div className="corporate-service">
               <h4>Leadership Alignment</h4>
               <ul>
@@ -78,7 +84,7 @@ function Corporate() {
                 <li>Creating a workplace culture that people feel proud to be a part of</li>
               </ul>
             </div>
-            
+
             <div className="corporate-service">
               <h4>Energy Healing and Sound Healing for Teams</h4>
               <ul>
@@ -87,7 +93,7 @@ function Corporate() {
                 <li>Tips to maintain personal balance, even in a busy workday</li>
               </ul>
             </div>
-            
+
             <div className="corporate-service">
               <h4>Work-Life Balance Coaching</h4>
               <ul>

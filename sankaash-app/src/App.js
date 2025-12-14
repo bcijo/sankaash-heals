@@ -4,6 +4,9 @@ import { FaWhatsapp, FaEnvelope, FaPhone, FaInstagram } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import CircularReviewsGallery from './components/CircularReviewsGallery';
+import SpiritualBackground from './components/SpiritualBackground';
+import GlassCard from './components/GlassCard';
+import RitualEntry from './components/RitualEntry';
 
 function App() {
   // Smooth scrolling for navigation links and hash-based navigation
@@ -14,7 +17,7 @@ function App() {
         e.preventDefault();
         const targetId = this.getAttribute('href');
         const targetElement = document.querySelector(targetId);
-        
+
         if (targetElement) {
           targetElement.scrollIntoView({
             behavior: 'smooth',
@@ -41,7 +44,7 @@ function App() {
     // Header scroll effect
     function handleHeaderScroll() {
       const header = document.querySelector('.header');
-      
+
       if (window.scrollY > 100) {
         header.style.background = 'rgba(255, 255, 255, 0.95)';
         header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
@@ -54,7 +57,7 @@ function App() {
     // Throttle function for better performance
     function throttle(func, limit) {
       let inThrottle;
-      return function() {
+      return function () {
         const args = arguments;
         const context = this;
         if (!inThrottle) {
@@ -79,7 +82,7 @@ function App() {
         if (entry.isIntersecting) {
           entry.target.style.opacity = '1';
           entry.target.style.transform = 'translateY(0)';
-          
+
           // Add a small delay for staggered animations
           const delay = Array.from(entry.target.parentNode.children).indexOf(entry.target) * 100;
           entry.target.style.transitionDelay = `${delay}ms`;
@@ -89,7 +92,7 @@ function App() {
 
     // Initialize animations for service cards and corporate services
     const animatedElements = document.querySelectorAll('.service-card, .corporate-service');
-    
+
     animatedElements.forEach(el => {
       el.style.opacity = '0';
       el.style.transform = 'translateY(30px)';
@@ -171,6 +174,24 @@ function App() {
     exit: { opacity: 0, x: 100 }
   };
 
+  const sectionVariants = {
+    hidden: { opacity: 0, y: 40 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 1, ease: "easeOut" }
+    }
+  };
+
+  const cardVariants = {
+    hidden: { opacity: 0, scale: 0.98 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: { duration: 0.8, ease: "easeOut" }
+    }
+  };
+
   // The actual JSX that will be rendered
   return (
     <motion.div
@@ -180,6 +201,8 @@ function App() {
       variants={pageVariants}
       transition={{ duration: 0.5 }}
     >
+      <RitualEntry />
+      <SpiritualBackground />
       {/* Header */}
       <header className="header">
         <nav className="nav">
@@ -202,13 +225,13 @@ function App() {
         <div className="floating-element"></div>
         <div className="floating-element"></div>
         <div className="floating-element"></div>
-        
+
         <div className="hero-content">
           <div className="hero-text">
             <h1>Sankaash Bharadwaj</h1>
-            <div className="hero-subtitle">Energy Healer • Law of Attraction Teacher • Life Coach • Habit Coach</div>
+            <div className="hero-subtitle">GBP Consultant • Life Optimization Guide • Integrative Healer • Transformational Workshop Leader</div>
             <div className="hero-description">
-            Unlock your true potential and transform your life with a perfect blend of ancient wisdom and modern science. Drawing from timeless Vedic teachings, Energy Healing, the Law of Attraction, and the power of Habit Science, I invite you to embark on a journey of self-discovery and lasting change. Together, we’ll explore practical and profound ways to align your inner and outer worlds, creating a life that truly resonates with your highest self.
+              Unlock your true potential and transform your life with a perfect blend of ancient wisdom and modern science. Drawing from timeless Vedic teachings, Energy Healing, the Law of Attraction, and the power of Habit Science, I invite you to embark on a journey of self-discovery and lasting change. Together, we’ll explore practical and profound ways to align your inner and outer worlds, creating a life that truly resonates with your highest self.
             </div>
             <a href="#services" className="cta-button">Discover Your Transformation</a>
           </div>
@@ -217,18 +240,25 @@ function App() {
           </div>
         </div>
       </section>      {/* About Section */}
-      <section id="about" className="about-section">
+      <motion.section
+        id="about"
+        className="about-section"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
+        variants={sectionVariants}
+      >
         <div className="container">
-          <div className="about-header">
+          <GlassCard className="about-header">
             <div className="about-header-content">
               <span className="about-label">About Sankaash</span>
               <h2 className="about-title">Bridging Ancient Wisdom with Modern Science</h2>
               <p className="about-intro">
-              Starting his journey in Energy Healing at 13, Sankaash blends ancient wisdom with modern tools to help others unlock their true potential and live their best lives.
+                Starting his journey in Energy Healing at 13, Sankaash blends ancient wisdom with modern tools to help others unlock their true potential and live their best lives.
               </p>
             </div>
-          </div>
-          
+          </GlassCard>
+
           <div className="about-content-wrapper">
             <div className="about-content-grid">
               <div className="about-text-section">
@@ -239,14 +269,14 @@ function App() {
                       Sankaash effortlessly blends ancient wisdom from the <strong>Vedas</strong> and <strong>Tantra</strong> with modern advancements in <strong>Neuroscience, Energy Healing</strong>, the <strong>Law of Attraction</strong>, and <strong>Habit Science</strong>. His holistic approach integrates timeless spiritual philosophies with contemporary practices, creating a path of transformation that nurtures the <strong>mind, body</strong>, and <strong>spirit</strong>.
                     </p>
                   </div>
-                  
+
                   <div className="about-impact">
                     <h4>Proven Impact</h4>
                     <p className="about-text">
                       Through <strong>workshops, one-on-one coaching</strong>, and <strong>energy healing sessions</strong>, Sankaash has transformed many lives by inspiring <strong>self-awareness</strong>, promoting <strong>well-being</strong>, and guiding clients towards <strong>abundance</strong> and <strong>fulfillment</strong>.
                     </p>
                   </div>
-                  
+
                   <div className="about-stats">
                     <div className="stat-item">
                       <span className="stat-number">13+</span>
@@ -263,7 +293,7 @@ function App() {
                   </div>
                 </div>
               </div>
-              
+
               <div className="about-visual-section">
                 <div className="about-image-container">
                   <div className="about-image-wrapper">
@@ -275,27 +305,27 @@ function App() {
                     </div>
                   </div>
                 </div>
-                
+
                 <div className="about-credentials">
                   <div className="credential-item">
                     <div className="credential-icon">🧘</div>
-                        <div className="credential-text">
-                          <h5>Master Healer and Life Coach</h5>
-                          <p>Certified in diverse healing and coaching modalities</p>
-                        </div>
-                      </div>
-                      <div className="credential-item">
-                        <div className="credential-icon">🎓</div>
-                        <div className="credential-text">
-                          <h5>Scientific Integration</h5>
-                          <p>A scientific integration of Habit Science, Energy Healing, the Law of Attraction, and Neuroscience.</p>
-                        </div>
-                      </div>
-                      <div className="credential-item">
-                        <div className="credential-icon">🧠</div>
-                        <div className="credential-text">
-                          <h5>Psychologist in the Making</h5>
-                          <p>Blending academic knowledge with real-world experience to empower personal transformation.</p>
+                    <div className="credential-text">
+                      <h5>Master Healer and Life Coach</h5>
+                      <p>Certified in diverse healing and coaching modalities</p>
+                    </div>
+                  </div>
+                  <div className="credential-item">
+                    <div className="credential-icon">🎓</div>
+                    <div className="credential-text">
+                      <h5>Scientific Integration</h5>
+                      <p>A scientific integration of Habit Science, Energy Healing, the Law of Attraction, and Neuroscience.</p>
+                    </div>
+                  </div>
+                  <div className="credential-item">
+                    <div className="credential-icon">🧠</div>
+                    <div className="credential-text">
+                      <h5>Psychologist in the Making</h5>
+                      <p>Blending academic knowledge with real-world experience to empower personal transformation.</p>
                     </div>
                   </div>
                 </div>
@@ -303,40 +333,54 @@ function App() {
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Services Section */}
-      <section id="services" className="services-section">
+      <motion.section
+        id="services"
+        className="services-section"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
+        variants={sectionVariants}
+      >
         <div className="container">
           <h2>Tailored Wellness Programs</h2>
           <p className="section-subtitle">Comprehensive healing and coaching services designed to transform your life from the inside out</p>
-          
+
           <div className="services-grid">
-            <div className="service-card">
+            <GlassCard className="service-card">
               <div className="service-icon">⚡</div>
               <h3>Genetic Brain Profiling (GBP)</h3>
               <p>Genetic Brain Profiling is a scientific method used to assess and understand an individual’s unique personality, strengths, learning style, and behavioural traits through the study of brain patterns via fingerprint analysis and neurogenetic insights. This profiling helps map inborn potential, career choices, and personal development paths, empowering people of all ages to make informed life decisions that align with their natural abilities.</p>
-            </div>
-            
-            <div className="service-card">
+            </GlassCard>
+
+            <GlassCard className="service-card">
               <div className="service-icon">🎯</div>
               <h3>Habit Coaching</h3>
               <p>Many of us have tried to make changes in life through motivation alone, only to face the guilt and frustration when those changes don’t stick. Through my habit coaching and workshops, I help individuals move beyond fleeting motivation to build lasting, sustainable change by reshaping their habits in alignment with their true desires and purpose, empowering them to create a life that genuinely reflects their authentic goals and values.</p>
-            </div>
-            
-            <div className="service-card">
+            </GlassCard>
+
+            <GlassCard className="service-card">
               <div className="service-icon">🌟</div>
               <h3>Law of attraction</h3>
               <p>The law of attraction is one of the most powerful universal laws, and my mission is to help people truly understand how it works so they can use this transformative tool to discover their authentic selves and manifest their deepest desires. In my workshops and coaching sessions, I empower clients to clarify personal intentions, align their thoughts and energy, and take inspired action toward creating the life they truly want, turning dreams into real experiences.</p>
-            </div>
+            </GlassCard>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Corporate Section */}
-      <section id="corporate" className="corporate">
+      <motion.section
+        id="corporate"
+        className="corporate"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
+        variants={sectionVariants}
+      >
         <div className="container">
-          <div className="corporate-content">
+          <GlassCard className="corporate-content">
             <div className="corporate-image">
               <img src={process.env.PUBLIC_URL + '/image3.jpg'} alt="Corporate Wellness" />
             </div>
@@ -345,14 +389,21 @@ function App() {
               <p>In today's demanding work environment, stress and burnout are all too common. I believe that when employees feel balanced and supported, they bring their best to both work and life. That's why I offer wellness programs designed to help teams reduce stress, build better habits, and create a more positive and productive workplace.</p>
               <Link to="/corporate" className="cta-button">Explore Corporate Programs</Link>
             </div>
-          </div>
+          </GlassCard>
         </div>
-      </section>
+      </motion.section>
 
       {/* Educational Section */}
-      <section id="educational" className="educational">
+      <motion.section
+        id="educational"
+        className="educational"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
+        variants={sectionVariants}
+      >
         <div className="container">
-          <div className="educational-content">
+          <GlassCard className="educational-content">
             <img src={process.env.PUBLIC_URL + '/image4.jpg'} alt="Educational Workshops for Teens" />
             <div className="educational-text">
               <h2>Educational Programs</h2>
@@ -362,17 +413,31 @@ function App() {
                 <br /></p>
               <Link to="/edu" className="cta-button">Explore Educational Programs</Link>
             </div>
-          </div>
+          </GlassCard>
         </div>
-      </section>
+      </motion.section>
 
       {/* Client Reviews Section */}
-      <section id="reviews" className="reviews-section">
+      <motion.section
+        id="reviews"
+        className="reviews-section"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
+        variants={sectionVariants}
+      >
         <CircularReviewsGallery reviews={reviewsArr} />
-      </section>
+      </motion.section>
 
       {/* Contact Section */}
-      <section id="contact" className="contact">
+      <motion.section
+        id="contact"
+        className="contact"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
+        variants={sectionVariants}
+      >
         <div className="container">
           <h2>Ready to Transform Your Life?</h2>
           <p>Take the first step towards a life of balance, abundance, and fulfillment. Let's work together to unlock your true potential and create lasting positive change.</p>
@@ -412,7 +477,7 @@ function App() {
             </a>
           </div>
         </div>
-      </section>
+      </motion.section>
     </motion.div>
   );
 }
