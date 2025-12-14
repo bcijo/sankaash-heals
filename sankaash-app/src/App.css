@@ -407,30 +407,247 @@ section {
 
 /* Responsive */
 @media (max-width: 768px) {
+
+    /* Prevent horizontal scrolling */
+    .container {
+        padding: 0 1rem;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    section {
+        padding: 3rem 0;
+    }
+
+    /* Hero Section Mobile Fixes */
+    .hero {
+        height: auto;
+        min-height: 100vh;
+        padding-top: 100px;
+        padding-bottom: 2rem;
+    }
+
     .hero-content {
-        flex-direction: column-reverse;
+        flex-direction: column;
         text-align: center;
+        padding: 0 1rem;
+        gap: 2rem;
     }
 
     .hero-text {
         padding-right: 0;
         margin-top: 2rem;
+        order: 2;
+    }
+
+    .hero-image {
+        order: 1;
+        width: 100%;
+        max-width: 280px;
+        margin: 0 auto;
+    }
+
+    .hero-image img {
+        width: 100%;
+        height: auto;
+        max-height: 300px;
+        object-fit: cover;
     }
 
     .hero-text h1 {
-        font-size: 2.5rem;
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
     }
 
-    .about-content-grid,
+    .hero-subtitle {
+        font-size: 0.85rem;
+        margin-bottom: 1rem;
+        letter-spacing: 0.5px;
+    }
+
+    .hero-description {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+        line-height: 1.6;
+    }
+
+    .cta-button {
+        padding: 0.875rem 2rem;
+        font-size: 0.9rem;
+        display: inline-block;
+        white-space: nowrap;
+    }
+
+    /* About Section Mobile */
+    .about-title {
+        font-size: 1.75rem;
+    }
+
+    .about-intro {
+        font-size: 1rem;
+    }
+
+    .about-content-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .about-highlight h3 {
+        font-size: 1.5rem;
+    }
+
+    .about-stats {
+        flex-direction: column;
+        gap: 1.5rem;
+        align-items: center;
+    }
+
+    .stat-number {
+        font-size: 2rem;
+    }
+
+    /* Services Section Mobile */
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .services-section h2 {
+        font-size: 1.75rem;
+    }
+
+    .section-subtitle {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    /* Corporate & Educational Mobile Fixes */
     .corporate-content,
     .educational-content {
-        grid-template-columns: 1fr;
         flex-direction: column;
-        gap: 2rem;
+        gap: 1.5rem;
+        padding: 0;
+    }
+
+    .corporate-image,
+    .educational-content img {
+        flex: none;
+        max-width: 100%;
+        width: 100%;
+        height: auto;
+        max-height: 250px;
+        object-fit: cover;
+    }
+
+    .corporate-image img {
+        width: 100%;
+        height: auto;
+        max-height: 250px;
+        object-fit: cover;
+    }
+
+    .corporate-text,
+    .educational-text {
+        padding: 0;
+    }
+
+    .corporate-text h2,
+    .educational-text h2 {
+        font-size: 1.5rem;
+    }
+
+    .corporate-text p,
+    .educational-text p {
+        font-size: 0.95rem;
+    }
+
+    /* Nav Mobile */
+    .nav {
+        padding: 0 1rem;
     }
 
     .nav-links {
         display: none;
-        /* Mobile menu implementation needed if not present */
+    }
+
+    .logo {
+        font-size: 1.1rem;
+    }
+
+    .logo-image {
+        height: 32px;
+        margin-right: 0.5rem;
+    }
+
+    /* Contact Section Mobile */
+    .contact h2 {
+        font-size: 1.5rem;
+    }
+
+    .contact p {
+        font-size: 0.95rem;
+    }
+
+    .contact-icons {
+        gap: 1.5rem;
+    }
+
+    /* Floating Elements - make smaller on mobile */
+    .floating-element:nth-child(1) {
+        width: 150px;
+        height: 150px;
+    }
+
+    .floating-element:nth-child(2) {
+        width: 100px;
+        height: 100px;
+    }
+
+    .floating-element:nth-child(3) {
+        width: 75px;
+        height: 75px;
+    }
+
+    /* Credentials Mobile */
+    .credential-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+
+    .credential-text h5 {
+        font-size: 1rem;
+    }
+
+    .credential-text p {
+        font-size: 0.85rem;
+    }
+}
+
+/* Extra small devices (phones in portrait) */
+@media (max-width: 480px) {
+    .hero-text h1 {
+        font-size: 1.75rem;
+    }
+
+    .hero-subtitle {
+        font-size: 0.75rem;
+    }
+
+    .hero-description {
+        font-size: 0.9rem;
+    }
+
+    .about-title {
+        font-size: 1.5rem;
+    }
+
+    .stat-number {
+        font-size: 1.75rem;
+    }
+
+    .cta-button {
+        padding: 0.75rem 1.5rem;
+        font-size: 0.85rem;
     }
 }

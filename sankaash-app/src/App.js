@@ -298,11 +298,7 @@ function App() {
                 <div className="about-image-container">
                   <div className="about-image-wrapper">
                     <img src={process.env.PUBLIC_URL + '/image2.jpg'} alt="Sankaash Bharadwaj - Energy Healer and Life Coach" />
-                    <div className="image-overlay">
-                      <div className="overlay-content">
-                        <span className="overlay-text">Transforming Lives Since 2011</span>
-                      </div>
-                    </div>
+
                   </div>
                 </div>
 
