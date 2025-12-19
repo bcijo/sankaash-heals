@@ -286,6 +286,10 @@ section {
     text-align: center;
 }
 
+.services-section h2 {
+    font-size: 1.5rem;
+}
+
 .section-subtitle {
     max-width: 600px;
     margin: 0 auto 4rem;

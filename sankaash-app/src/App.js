@@ -231,7 +231,7 @@ function App() {
             <h1>Sankaash Bharadwaj</h1>
             <div className="hero-subtitle">GBP Consultant • Life Optimization Guide • Integrative Healer • Transformational Workshop Leader</div>
             <div className="hero-description">
-              Unlock your true potential and transform your life with a perfect blend of ancient wisdom and modern science. Drawing from timeless Vedic teachings, Energy Healing, the Law of Attraction, and the power of Habit Science, I invite you to embark on a journey of self-discovery and lasting change. Together, we’ll explore practical and profound ways to align your inner and outer worlds, creating a life that truly resonates with your highest self.
+            Imagine unlocking your true potential and transforming your life with a perfect blend of ancient wisdom and modern science. I've drawn from timeless Vedic and Tantric teachings, Genetic Brain Profiling, integrative healing, the Principle of Conscious Creation, the power of Habit Science, and the body's inherent wisdom for recovery through mindful dietary choices and purposeful fasting to guide my own journey—and now, I invite you to join me on yours. Together, we'll uncover practical, profound ways to align your inner and outer worlds, crafting a life that truly resonates with your highest self.
             </div>
             <a href="#services" className="cta-button">Discover Your Transformation</a>
           </div>
@@ -252,9 +252,9 @@ function App() {
           <GlassCard className="about-header">
             <div className="about-header-content">
               <span className="about-label">About Sankaash</span>
-              <h2 className="about-title">Bridging Ancient Wisdom with Modern Science</h2>
+              <h2 className="about-title">Harmonizing perennial insights with contemporary research</h2>
               <p className="about-intro">
-                Starting his journey in Energy Healing at 13, Sankaash blends ancient wisdom with modern tools to help others unlock their true potential and live their best lives.
+              Energy healing found me at 13. Now, I combine its ancient roots with contemporary methods to support you in revealing your authentic power and help you in stepping into your best life.
               </p>
             </div>
           </GlassCard>
@@ -266,14 +266,14 @@ function App() {
                   <div className="about-highlight">
                     <h3>What Makes Sankaash Unique</h3>
                     <p className="about-description">
-                      Sankaash effortlessly blends ancient wisdom from the <strong>Vedas</strong> and <strong>Tantra</strong> with modern advancements in <strong>Neuroscience, Energy Healing</strong>, the <strong>Law of Attraction</strong>, and <strong>Habit Science</strong>. His holistic approach integrates timeless spiritual philosophies with contemporary practices, creating a path of transformation that nurtures the <strong>mind, body</strong>, and <strong>spirit</strong>.
+                      <strong>My work with you draws straight from the breakthroughs I've forged in my own life—from discovering energy healing at 13, to weaving Vedic and Tantric wisdom with Genetic Brain Profiling, habit science, and more.</strong>
                     </p>
                   </div>
 
                   <div className="about-impact">
                     <h4>Proven Impact</h4>
                     <p className="about-text">
-                      Through <strong>workshops, one-on-one coaching</strong>, and <strong>energy healing sessions</strong>, Sankaash has transformed many lives by inspiring <strong>self-awareness</strong>, promoting <strong>well-being</strong>, and guiding clients towards <strong>abundance</strong> and <strong>fulfillment</strong>.
+                      Through <strong>workshops, one-on-one coaching</strong>, and <strong>energy healing sessions</strong>, I have transformed many lives by inspiring <strong>self-awareness</strong>, promoting <strong>well-being</strong>, and guiding clients towards <strong>abundance</strong> and <strong>fulfillment</strong>.
                     </p>
                   </div>
 
@@ -301,30 +301,6 @@ function App() {
 
                   </div>
                 </div>
-
-                <div className="about-credentials">
-                  <div className="credential-item">
-                    <div className="credential-icon">🧘</div>
-                    <div className="credential-text">
-                      <h5>Master Healer and Life Coach</h5>
-                      <p>Certified in diverse healing and coaching modalities</p>
-                    </div>
-                  </div>
-                  <div className="credential-item">
-                    <div className="credential-icon">🎓</div>
-                    <div className="credential-text">
-                      <h5>Scientific Integration</h5>
-                      <p>A scientific integration of Habit Science, Energy Healing, the Law of Attraction, and Neuroscience.</p>
-                    </div>
-                  </div>
-                  <div className="credential-item">
-                    <div className="credential-icon">🧠</div>
-                    <div className="credential-text">
-                      <h5>Psychologist in the Making</h5>
-                      <p>Blending academic knowledge with real-world experience to empower personal transformation.</p>
-                    </div>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
@@ -341,8 +317,8 @@ function App() {
         variants={sectionVariants}
       >
         <div className="container">
-          <h2>Tailored Wellness Programs</h2>
-          <p className="section-subtitle">Comprehensive healing and coaching services designed to transform your life from the inside out</p>
+          <h2>Your journey with me</h2>
+          <p className="section-subtitle">Together, we turn inner insights into outer change through practical coaching, seminars, and workshops.</p>
 
           <div className="services-grid">
             <GlassCard className="service-card">
