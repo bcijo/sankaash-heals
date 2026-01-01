@@ -2,11 +2,12 @@ import React, { useEffect, useRef, useState } from 'react';
 import './App.css';
 import { FaWhatsapp, FaEnvelope, FaPhone, FaInstagram } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import CircularReviewsGallery from './components/CircularReviewsGallery';
 import SpiritualBackground from './components/SpiritualBackground';
 import GlassCard from './components/GlassCard';
 import RitualEntry from './components/RitualEntry';
+import { FaTimes } from 'react-icons/fa';
 
 function App() {
   // Smooth scrolling for navigation links and hash-based navigation
@@ -165,6 +166,14 @@ function App() {
     }
   ];
 
+  // Separate short and long reviews (threshold: 300 characters)
+  const SHORT_REVIEW_THRESHOLD = 300;
+  const shortReviews = reviewsArr.filter(r => r.review.length <= SHORT_REVIEW_THRESHOLD);
+  const longReviews = reviewsArr.filter(r => r.review.length > SHORT_REVIEW_THRESHOLD);
+
+  // State for showing long reviews modal
+  const [showMoreReviews, setShowMoreReviews] = useState(false);
+
 
 
   // Animation variants for page transition
@@ -231,7 +240,7 @@ function App() {
             <h1>Sankaash Bharadwaj</h1>
             <div className="hero-subtitle">GBP Consultant • Life Optimization Guide • Integrative Healer • Transformational Workshop Leader</div>
             <div className="hero-description">
-            Imagine unlocking your true potential and transforming your life with a perfect blend of ancient wisdom and modern science. I've drawn from timeless Vedic and Tantric teachings, Genetic Brain Profiling, integrative healing, the Principle of Conscious Creation, the power of Habit Science, and the body's inherent wisdom for recovery through mindful dietary choices and purposeful fasting to guide my own journey—and now, I invite you to join me on yours. Together, we'll uncover practical, profound ways to align your inner and outer worlds, crafting a life that truly resonates with your highest self.
+              Imagine unlocking your true potential and transforming your life with a perfect blend of ancient wisdom and modern science. I've drawn from timeless Vedic and Tantric teachings, Genetic Brain Profiling, integrative healing, the Principle of Conscious Creation, the power of Habit Science, and the body's inherent wisdom for recovery through mindful dietary choices and purposeful fasting to guide my own journey—and now, I invite you to join me on yours. Together, we'll uncover practical, profound ways to align your inner and outer worlds, crafting a life that truly resonates with your highest self.
             </div>
             <a href="#services" className="cta-button">Discover Your Transformation</a>
           </div>
@@ -254,7 +263,7 @@ function App() {
               <span className="about-label">About Sankaash</span>
               <h2 className="about-title">Harmonizing perennial insights with contemporary research</h2>
               <p className="about-intro">
-              Energy healing found me at 13. Now, I combine its ancient roots with contemporary methods to support you in revealing your authentic power and help you in stepping into your best life.
+                Energy healing found me at 13. Now, I combine its ancient roots with contemporary methods to support you in revealing your authentic power and help you in stepping into your best life.
               </p>
             </div>
           </GlassCard>
@@ -322,21 +331,21 @@ function App() {
 
           <div className="services-grid">
             <GlassCard className="service-card">
-              <div className="service-icon">⚡</div>
+              <div className="service-icon">🧠</div>
               <h3>Genetic Brain Profiling (GBP)</h3>
               <p>Genetic Brain Profiling is a scientific method used to assess and understand an individual’s unique personality, strengths, learning style, and behavioural traits through the study of brain patterns via fingerprint analysis and neurogenetic insights. This profiling helps map inborn potential, career choices, and personal development paths, empowering people of all ages to make informed life decisions that align with their natural abilities.</p>
             </GlassCard>
 
             <GlassCard className="service-card">
-              <div className="service-icon">🎯</div>
-              <h3>Habit Coaching</h3>
-              <p>Many of us have tried to make changes in life through motivation alone, only to face the guilt and frustration when those changes don’t stick. Through my habit coaching and workshops, I help individuals move beyond fleeting motivation to build lasting, sustainable change by reshaping their habits in alignment with their true desires and purpose, empowering them to create a life that genuinely reflects their authentic goals and values.</p>
+              <div className="service-icon">🍽️</div>
+              <h3>Conscious Eating & Time Restricted Feeding</h3>
+              <p>Fasting activates your cells' built-in repair system through autophagy, while conscious eating trains you to tune into real hunger signals, stabilizing blood sugar and gut function. Confining meals to a 6-10 hour window syncs you with your body's natural clock, reducing fat buildup, inflammation, and insulin resistance to trigger innate healing. In my workshops and coaching, I guide you to harness this practical tool, aligning daily habits with your rhythms for lasting vitality.</p>
             </GlassCard>
 
             <GlassCard className="service-card">
-              <div className="service-icon">🌟</div>
-              <h3>Law of attraction</h3>
-              <p>The law of attraction is one of the most powerful universal laws, and my mission is to help people truly understand how it works so they can use this transformative tool to discover their authentic selves and manifest their deepest desires. In my workshops and coaching sessions, I empower clients to clarify personal intentions, align their thoughts and energy, and take inspired action toward creating the life they truly want, turning dreams into real experiences.</p>
+              <div className="service-icon"></div>
+              <h3>Integrative Healing</h3>
+              <p>Your body is wired for self-healing—think of it as an inner repair crew ready to fix inflammation, fatigue, and imbalances. But daily stress, toxins, and chaos throw up roadblocks, silencing that natural power. Through hands-on tools like energy healing, breathwork, and targeted habit shifts, I help you dismantle those barriers, reigniting your body's own genius for renewal and flow.</p>
             </GlassCard>
           </div>
         </div>
@@ -398,8 +407,60 @@ function App() {
         viewport={{ once: true, margin: "-100px" }}
         variants={sectionVariants}
       >
-        <CircularReviewsGallery reviews={reviewsArr} />
+        <CircularReviewsGallery reviews={shortReviews} />
+        {longReviews.length > 0 && (
+          <div className="more-reviews-container">
+            <button
+              className="more-reviews-button"
+              onClick={() => setShowMoreReviews(true)}
+            >
+              More Reviews
+            </button>
+          </div>
+        )}
       </motion.section>
+
+      {/* Long Reviews Modal */}
+      <AnimatePresence>
+        {showMoreReviews && (
+          <motion.div
+            className="reviews-modal-overlay"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setShowMoreReviews(false)}
+          >
+            <motion.div
+              className="reviews-modal"
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              onClick={(e) => e.stopPropagation()}
+            >
+              <button
+                className="reviews-modal-close"
+                onClick={() => setShowMoreReviews(false)}
+              >
+                <FaTimes />
+              </button>
+              <h3 className="reviews-modal-title">More Voices of Transformation</h3>
+              <div className="reviews-modal-content">
+                {longReviews.map((review, index) => (
+                  <div key={index} className="long-review-card">
+                    <div className="long-review-header">
+                      <div className="long-review-initials">
+                        {review.name.split(' ').map(n => n[0]).join('')}
+                      </div>
+                      <span className="long-review-name">{review.name}</span>
+                    </div>
+                    <p className="long-review-text">"{review.review}"</p>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       {/* Contact Section */}
       <motion.section

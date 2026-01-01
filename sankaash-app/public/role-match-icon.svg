@@ -1,0 +1,24 @@
+<svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="puzzleGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#c2704f;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#d4a574;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Top-left puzzle piece -->
+  <path d="M15 15 L35 15 L35 20 Q40 20 40 25 Q40 30 35 30 L35 35 L20 35 Q20 30 15 30 Q10 30 10 25 Q10 20 15 20 Z" 
+        fill="url(#puzzleGradient)" stroke="url(#puzzleGradient)" stroke-width="1.5"/>
+  
+  <!-- Top-right puzzle piece -->
+  <path d="M45 15 L65 15 L65 30 Q70 30 70 35 Q70 40 65 40 L65 45 L45 45 L45 40 Q40 40 40 35 Q40 30 45 30 Z" 
+        fill="url(#puzzleGradient)" stroke="url(#puzzleGradient)" stroke-width="1.5" opacity="0.85"/>
+  
+  <!-- Bottom-left puzzle piece -->
+  <path d="M15 45 L20 45 Q20 40 25 40 Q30 40 30 45 L35 45 L35 65 L15 65 Z" 
+        fill="url(#puzzleGradient)" stroke="url(#puzzleGradient)" stroke-width="1.5" opacity="0.85"/>
+  
+  <!-- Bottom-right puzzle piece -->
+  <path d="M45 45 L50 45 Q50 50 45 50 Q40 50 40 55 L40 65 L65 65 L65 45 Z" 
+        fill="url(#puzzleGradient)" stroke="url(#puzzleGradient)" stroke-width="1.5" opacity="0.9"/>
+</svg>

@@ -102,6 +102,31 @@ function Corporate() {
                 <li>Creating space for growth and resilience, even in tough times</li>
               </ul>
             </div>
+
+
+          </div>
+        </div>
+      </section>
+
+      <section id="genetic-profiling" className="genetic-profiling">
+        <div className="container">
+          <h2>Genetic Brain Profiling</h2>
+          <div className="genetic-profiling-grid">
+            <div className="genetic-feature">
+              <img src={process.env.PUBLIC_URL + '/team-profile-icon.svg'} alt="Team Profile" className="feature-icon" />
+              <h3>Decodes Team Brain Profiles</h3>
+              <p>Understand how your team members naturally think and process information.</p>
+            </div>
+            <div className="genetic-feature">
+              <img src={process.env.PUBLIC_URL + '/role-match-icon.svg'} alt="Role Match" className="feature-icon" />
+              <h3>Matches Roles to Strengths</h3>
+              <p>Align responsibilities with innate capabilities for optimal performance.</p>
+            </div>
+            <div className="genetic-feature">
+              <img src={process.env.PUBLIC_URL + '/growth-icon.svg'} alt="Growth" className="feature-icon" />
+              <h3>Builds lasting Resilience</h3>
+              <p>Develop emotional strength and adaptability across your organization.</p>
+            </div>
           </div>
         </div>
       </section>

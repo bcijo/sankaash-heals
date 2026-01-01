@@ -1,0 +1,24 @@
+<svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="teamGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#c2704f;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#d4a574;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Central person -->
+  <circle cx="40" cy="25" r="8" fill="url(#teamGradient)"/>
+  <path d="M28 38 Q28 32 32 30 L48 30 Q52 32 52 38 L52 45 L28 45 Z" fill="url(#teamGradient)"/>
+  
+  <!-- Left person -->
+  <circle cx="20" cy="45" r="6" fill="url(#teamGradient)" opacity="0.8"/>
+  <path d="M12 55 Q12 50 15 48 L25 48 Q28 50 28 55 L28 60 L12 60 Z" fill="url(#teamGradient)" opacity="0.8"/>
+  
+  <!-- Right person -->
+  <circle cx="60" cy="45" r="6" fill="url(#teamGradient)" opacity="0.8"/>
+  <path d="M52 55 Q52 50 55 48 L65 48 Q68 50 68 55 L68 60 L52 60 Z" fill="url(#teamGradient)" opacity="0.8"/>
+  
+  <!-- Connection lines -->
+  <line x1="32" y1="40" x2="23" y2="48" stroke="url(#teamGradient)" stroke-width="2" opacity="0.5"/>
+  <line x1="48" y1="40" x2="57" y2="48" stroke="url(#teamGradient)" stroke-width="2" opacity="0.5"/>
+</svg>

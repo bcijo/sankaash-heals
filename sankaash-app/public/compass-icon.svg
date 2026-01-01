@@ -1,0 +1,29 @@
+<svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="compassGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#c2704f;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#d4a574;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Outer circle -->
+  <circle cx="40" cy="40" r="30" stroke="url(#compassGradient)" stroke-width="3" fill="none"/>
+  
+  <!-- Inner circle -->
+  <circle cx="40" cy="40" r="4" fill="url(#compassGradient)"/>
+  
+  <!-- North arrow (pointing up) -->
+  <path d="M40 15 L45 35 L40 32 L35 35 Z" fill="url(#compassGradient)"/>
+  
+  <!-- South arrow (pointing down) -->
+  <path d="M40 65 L35 45 L40 48 L45 45 Z" fill="url(#compassGradient)" opacity="0.5"/>
+  
+  <!-- East arrow (pointing right) -->
+  <path d="M65 40 L45 35 L48 40 L45 45 Z" fill="url(#compassGradient)" opacity="0.5"/>
+  
+  <!-- West arrow (pointing left) -->
+  <path d="M15 40 L35 45 L32 40 L35 35 Z" fill="url(#compassGradient)" opacity="0.5"/>
+  
+  <!-- Cardinal points -->
+  <text x="40" y="10" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="url(#compassGradient)" text-anchor="middle">N</text>
+</svg>

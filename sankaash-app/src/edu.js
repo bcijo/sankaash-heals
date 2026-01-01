@@ -113,6 +113,30 @@ function Edu() {
                 <li>Saying NO with confidence</li>
               </ul>
             </div>
+
+          </div>
+        </div>
+      </section>
+
+      <section id="genetic-profiling" className="genetic-profiling">
+        <div className="container">
+          <h2>Genetic Brain Profiling</h2>
+          <div className="genetic-profiling-grid">
+            <div className="genetic-feature">
+              <img src={process.env.PUBLIC_URL + '/brain-icon.svg'} alt="Brain" className="feature-icon" />
+              <h3>Unlocks learning styles</h3>
+              <p>Discover how you or your students learn best.</p>
+            </div>
+            <div className="genetic-feature">
+              <img src={process.env.PUBLIC_URL + '/compass-icon.svg'} alt="Compass" className="feature-icon" />
+              <h3>Guides subject choices</h3>
+              <p>Align education paths with natural strengths.</p>
+            </div>
+            <div className="genetic-feature">
+              <img src={process.env.PUBLIC_URL + '/resilience-icon.svg'} alt="Resilience" className="feature-icon" />
+              <h3>Builds emotional resilience</h3>
+              <p>Understand and manage emotions effectively.</p>
+            </div>
           </div>
         </div>
       </section>

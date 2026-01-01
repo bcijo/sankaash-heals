@@ -59,6 +59,12 @@ p {
     color: var(--primary-color);
 }
 
+.logo-image {
+    height: 40px;
+    margin-right: 1rem;
+    border-radius: 10px;
+}
+
 .nav-links {
     display: flex;
     list-style: none;
@@ -217,4 +223,59 @@ p {
     .educational-image img {
         margin-top: 0;
     }
+}
+
+/* Genetic Brain Profiling Section */
+.genetic-profiling {
+    padding: 6rem 2rem;
+    background: linear-gradient(135deg, rgba(255, 248, 240, 0.9), rgba(212, 165, 116, 0.15));
+    text-align: center;
+}
+
+.genetic-profiling h2 {
+    font-size: 2.8rem;
+    margin-bottom: 3rem;
+    color: #685249;
+    ;
+}
+
+.genetic-profiling-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 3rem;
+}
+
+.genetic-feature {
+    background: rgba(255, 250, 245, 0.85);
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(139, 90, 60, 0.1);
+    transition: transform 0.3s ease;
+    border: 1px solid rgba(212, 165, 116, 0.2);
+}
+
+.genetic-feature:hover {
+    transform: translateY(-10px);
+}
+
+.feature-icon {
+    width: 80px;
+    height: 80px;
+    display: block;
+    margin: 0 auto 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.genetic-feature:hover .feature-icon {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.genetic-feature h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #685249;
+}
+
+.genetic-feature p {
+    color: #6b5744;
 }

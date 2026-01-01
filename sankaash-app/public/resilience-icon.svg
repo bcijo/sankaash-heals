@@ -1,0 +1,20 @@
+<svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="resilienceGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#c2704f;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#d4a574;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Shield outline -->
+  <path d="M40 10 L65 20 L65 40 C65 55 55 65 40 70 C25 65 15 55 15 40 L15 20 Z" 
+        fill="url(#resilienceGradient)" stroke="url(#resilienceGradient)" stroke-width="2"/>
+  
+  <!-- Inner shield detail -->
+  <path d="M40 18 L58 25 L58 40 C58 51 50 58 40 62 C30 58 22 51 22 40 L22 25 Z" 
+        fill="none" stroke="white" stroke-width="2" opacity="0.4"/>
+  
+  <!-- Checkmark/strength symbol -->
+  <path d="M32 40 L37 47 L50 32" 
+        stroke="white" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+</svg>
